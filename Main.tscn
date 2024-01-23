@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://bi0i1nagrn1hf"]
+[gd_scene load_steps=28 format=3 uid="uid://bi0i1nagrn1hf"]
 
 [ext_resource type="Script" path="res://scripts/data_setup.gd" id="1_87lbl"]
 [ext_resource type="Texture2D" uid="uid://kvk8oiao20m4" path="res://art/icons/Obermun.png" id="1_js6lg"]
 [ext_resource type="Texture2D" uid="uid://bt1vdwl4bwd1t" path="res://art/Flags/ARG.png" id="2_to4xt"]
+[ext_resource type="Script" path="res://scripts/GridContainer.gd" id="3_i8m8r"]
 [ext_resource type="Texture2D" uid="uid://dolf4cvj7l32t" path="res://art/Flags/AUS.png" id="3_xwqy0"]
 [ext_resource type="Texture2D" uid="uid://dgymjak40ls13" path="res://art/Flags/DNK.png" id="4_e3h53"]
 [ext_resource type="Texture2D" uid="uid://cnlcqeykne236" path="res://art/Flags/COD.png" id="5_inofs"]
@@ -268,6 +269,7 @@ grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/UNEP Container"]
 layout_mode = 2
+script = ExtResource("3_i8m8r")
 
 [node name="Argentina" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
 layout_mode = 2
