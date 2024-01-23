@@ -1,0 +1,458 @@
+[gd_scene load_steps=27 format=3 uid="uid://bi0i1nagrn1hf"]
+
+[ext_resource type="Script" path="res://scripts/data_setup.gd" id="1_87lbl"]
+[ext_resource type="Texture2D" uid="uid://kvk8oiao20m4" path="res://art/icons/Obermun.png" id="1_js6lg"]
+[ext_resource type="Texture2D" uid="uid://bt1vdwl4bwd1t" path="res://art/Flags/ARG.png" id="2_to4xt"]
+[ext_resource type="Texture2D" uid="uid://dolf4cvj7l32t" path="res://art/Flags/AUS.png" id="3_xwqy0"]
+[ext_resource type="Texture2D" uid="uid://dgymjak40ls13" path="res://art/Flags/DNK.png" id="4_e3h53"]
+[ext_resource type="Texture2D" uid="uid://cnlcqeykne236" path="res://art/Flags/COD.png" id="5_inofs"]
+[ext_resource type="Texture2D" uid="uid://rw5t4hipwo3s" path="res://art/Flags/FNL.png" id="6_teoc0"]
+[ext_resource type="Texture2D" uid="uid://c6q6lg7nuuq2e" path="res://art/Flags/IND.png" id="7_gfek1"]
+[ext_resource type="Texture2D" uid="uid://bd66gue618img" path="res://art/Flags/ICL.png" id="8_kkm8c"]
+[ext_resource type="Texture2D" uid="uid://bav7yd2vypndd" path="res://art/Flags/JPN.png" id="9_agoy1"]
+[ext_resource type="Texture2D" uid="uid://dq1ohanao08li" path="res://art/Flags/NZL.png" id="10_gjt1q"]
+[ext_resource type="Texture2D" uid="uid://d2sm48lbyvu6c" path="res://art/Flags/PER.png" id="11_t7dbu"]
+[ext_resource type="Texture2D" uid="uid://nkobltava56g" path="res://art/Flags/COL.png" id="12_8jjlj"]
+[ext_resource type="Texture2D" uid="uid://kgs1vucbye4i" path="res://art/Flags/RUS.png" id="13_omnkt"]
+[ext_resource type="Texture2D" uid="uid://u8g1d653a567" path="res://art/Flags/ZAF.png" id="14_s2hrh"]
+[ext_resource type="Texture2D" uid="uid://dy77xyg28nmhf" path="res://art/Flags/USA.png" id="15_1iav1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvyph"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qehjq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ehh0"]
+
+[sub_resource type="Theme" id="Theme_cdk4x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5jr4w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kelj7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5udw3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7nuyg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dj1sl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3mpu"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_87lbl")
+
+[node name="BackGround" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.54902, 0.180392, 0.329412, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.0
+offset_top = 45.0
+offset_right = 193.0
+offset_bottom = 301.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_js6lg")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="TextEdit" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.603125
+anchor_bottom = 0.03
+offset_left = -242.0
+offset_top = 182.0
+offset_right = 90.0001
+offset_bottom = 222.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dvyph")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qehjq")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_3ehh0")
+text = "OberMUN 2024 Debate Manager"
+editable = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+metadata/_edit_use_anchors_ = true
+
+[node name="SelectionButtons" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SelectCommitee" type="OptionButton" parent="CanvasLayer/SelectionButtons"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -546.0
+offset_top = -32.0
+offset_right = -220.0
+offset_bottom = -1.0
+grow_horizontal = 2
+theme = SubResource("Theme_cdk4x")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+item_count = 7
+selected = 0
+popup/item_0/text = "Select a commitee"
+popup/item_0/id = 0
+popup/item_1/text = "CSW"
+popup/item_1/id = 1
+popup/item_2/text = "ECOSOC"
+popup/item_2/id = 2
+popup/item_3/text = "OHCHR"
+popup/item_3/id = 3
+popup/item_4/text = "UNEP"
+popup/item_4/id = 4
+popup/item_5/text = "UNSC"
+popup/item_5/id = 5
+popup/item_6/text = "WHO"
+popup/item_6/id = 6
+
+[node name="SelectTopic" type="OptionButton" parent="CanvasLayer/SelectionButtons"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -161.0
+offset_top = -32.0
+offset_right = 165.0
+offset_bottom = -1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+item_count = 2
+selected = 0
+popup/item_0/text = "Select a Topic"
+popup/item_0/id = 0
+popup/item_1/text = "Sample"
+popup/item_1/id = 1
+
+[node name="SelectSession" type="OptionButton" parent="CanvasLayer/SelectionButtons"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 224.0
+offset_top = -32.0
+offset_right = 550.0
+offset_bottom = -1.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+item_count = 1
+selected = 0
+popup/item_0/text = "Select a session"
+popup/item_0/id = 0
+
+[node name="Texts" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Commitee" type="TextEdit" parent="CanvasLayer/Texts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -545.0
+offset_top = -72.0
+offset_right = -219.0
+offset_bottom = -41.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Commitee:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Topics" type="TextEdit" parent="CanvasLayer/Texts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -161.0
+offset_top = -72.0
+offset_right = 165.0
+offset_bottom = -41.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Topics:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Topics2" type="TextEdit" parent="CanvasLayer/Texts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -161.0
+offset_top = 50.0
+offset_right = 165.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Delegates:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Session" type="TextEdit" parent="CanvasLayer/Texts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 225.0
+offset_top = -72.0
+offset_right = 551.0
+offset_bottom = -41.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Session:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="UNEP Container" type="ScrollContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = 66.0
+offset_right = 165.0
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/UNEP Container"]
+layout_mode = 2
+
+[node name="Argentina" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
+text = "Argentina"
+icon = ExtResource("2_to4xt")
+
+[node name="Australia" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
+text = "Australia"
+icon = ExtResource("3_xwqy0")
+
+[node name="Denmark" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
+text = "Denmark"
+icon = ExtResource("4_e3h53")
+
+[node name="Democratic Rep of the Congo" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
+text = "Democratic Rep. of the Congo"
+icon = ExtResource("5_inofs")
+
+[node name="Finland" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
+text = "Finland"
+icon = ExtResource("6_teoc0")
+
+[node name="India" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
+text = "India"
+icon = ExtResource("7_gfek1")
+
+[node name="Iceland" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
+text = "Iceland"
+icon = ExtResource("8_kkm8c")
+
+[node name="Japan" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
+text = "Japan"
+icon = ExtResource("9_agoy1")
+
+[node name="New Zealand" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
+text = "New Zealand"
+icon = ExtResource("10_gjt1q")
+
+[node name="Perù" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
+text = "Perù"
+icon = ExtResource("11_t7dbu")
+
+[node name="Rep of Columbia" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
+text = "Rep. of Columbia"
+icon = ExtResource("12_8jjlj")
+
+[node name="Russian Federation" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
+text = "Russian Federation"
+icon = ExtResource("13_omnkt")
+
+[node name="South Africa" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
+text = "South Africa"
+icon = ExtResource("14_s2hrh")
+
+[node name="United States of America" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
+text = "United States of America"
+icon = ExtResource("15_1iav1")
+
+[node name="Select All" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = 242.0
+offset_right = 164.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p3mpu")
+text = "Select All"
+
+[node name="Start Session" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 227.0
+offset_top = 243.0
+offset_right = 549.0
+offset_bottom = 274.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p3mpu")
+text = "Start Session"
+
+[node name="Deselect All" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = 282.0
+offset_right = 164.0
+offset_bottom = 313.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p3mpu")
+text = "Deselect All"

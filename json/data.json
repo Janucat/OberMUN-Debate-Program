@@ -1,0 +1,19 @@
+{
+	"nations": [
+		{
+			"id": "argentina",
+			"name": "Argentina",
+			"image": "ARG.png"
+		},
+		{
+			"id": "afghanistan",
+			"name": "Afghanistan",
+			"image": "AFG.png"
+		},
+		{
+			"id": "australia",
+			"name": "Australia",
+			"image": "AUS.png"
+		},
+	]
+}
