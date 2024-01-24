@@ -1,22 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://bi0i1nagrn1hf"]
+[gd_scene load_steps=10 format=3 uid="uid://bi0i1nagrn1hf"]
 
 [ext_resource type="Script" path="res://scripts/data_setup.gd" id="1_87lbl"]
 [ext_resource type="Texture2D" uid="uid://kvk8oiao20m4" path="res://art/icons/Obermun.png" id="1_js6lg"]
-[ext_resource type="Texture2D" uid="uid://bt1vdwl4bwd1t" path="res://art/Flags/ARG.png" id="2_to4xt"]
 [ext_resource type="Script" path="res://scripts/GridContainer.gd" id="3_i8m8r"]
-[ext_resource type="Texture2D" uid="uid://dolf4cvj7l32t" path="res://art/Flags/AUS.png" id="3_xwqy0"]
-[ext_resource type="Texture2D" uid="uid://dgymjak40ls13" path="res://art/Flags/DNK.png" id="4_e3h53"]
-[ext_resource type="Texture2D" uid="uid://cnlcqeykne236" path="res://art/Flags/COD.png" id="5_inofs"]
-[ext_resource type="Texture2D" uid="uid://rw5t4hipwo3s" path="res://art/Flags/FNL.png" id="6_teoc0"]
-[ext_resource type="Texture2D" uid="uid://c6q6lg7nuuq2e" path="res://art/Flags/IND.png" id="7_gfek1"]
-[ext_resource type="Texture2D" uid="uid://bd66gue618img" path="res://art/Flags/ICL.png" id="8_kkm8c"]
-[ext_resource type="Texture2D" uid="uid://bav7yd2vypndd" path="res://art/Flags/JPN.png" id="9_agoy1"]
-[ext_resource type="Texture2D" uid="uid://dq1ohanao08li" path="res://art/Flags/NZL.png" id="10_gjt1q"]
-[ext_resource type="Texture2D" uid="uid://d2sm48lbyvu6c" path="res://art/Flags/PER.png" id="11_t7dbu"]
-[ext_resource type="Texture2D" uid="uid://nkobltava56g" path="res://art/Flags/COL.png" id="12_8jjlj"]
-[ext_resource type="Texture2D" uid="uid://kgs1vucbye4i" path="res://art/Flags/RUS.png" id="13_omnkt"]
-[ext_resource type="Texture2D" uid="uid://u8g1d653a567" path="res://art/Flags/ZAF.png" id="14_s2hrh"]
-[ext_resource type="Texture2D" uid="uid://dy77xyg28nmhf" path="res://art/Flags/USA.png" id="15_1iav1"]
+[ext_resource type="Script" path="res://scripts/start_session.gd" id="4_stb0q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvyph"]
 
@@ -25,16 +12,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ehh0"]
 
 [sub_resource type="Theme" id="Theme_cdk4x"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5jr4w"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kelj7"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5udw3"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7nuyg"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dj1sl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3mpu"]
 
@@ -271,146 +248,6 @@ grow_vertical = 2
 layout_mode = 2
 script = ExtResource("3_i8m8r")
 
-[node name="Argentina" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
-text = "Argentina"
-icon = ExtResource("2_to4xt")
-
-[node name="Australia" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
-text = "Australia"
-icon = ExtResource("3_xwqy0")
-
-[node name="Denmark" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
-text = "Denmark"
-icon = ExtResource("4_e3h53")
-
-[node name="Democratic Rep of the Congo" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
-text = "Democratic Rep. of the Congo"
-icon = ExtResource("5_inofs")
-
-[node name="Finland" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
-text = "Finland"
-icon = ExtResource("6_teoc0")
-
-[node name="India" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
-text = "India"
-icon = ExtResource("7_gfek1")
-
-[node name="Iceland" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
-text = "Iceland"
-icon = ExtResource("8_kkm8c")
-
-[node name="Japan" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
-text = "Japan"
-icon = ExtResource("9_agoy1")
-
-[node name="New Zealand" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
-text = "New Zealand"
-icon = ExtResource("10_gjt1q")
-
-[node name="Perù" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
-text = "Perù"
-icon = ExtResource("11_t7dbu")
-
-[node name="Rep of Columbia" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
-text = "Rep. of Columbia"
-icon = ExtResource("12_8jjlj")
-
-[node name="Russian Federation" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
-text = "Russian Federation"
-icon = ExtResource("13_omnkt")
-
-[node name="South Africa" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
-text = "South Africa"
-icon = ExtResource("14_s2hrh")
-
-[node name="United States of America" type="CheckBox" parent="CanvasLayer/UNEP Container/GridContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5jr4w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kelj7")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5udw3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nuyg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dj1sl")
-text = "United States of America"
-icon = ExtResource("15_1iav1")
-
 [node name="Select All" type="Button" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -442,6 +279,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_p3mpu")
 text = "Start Session"
+script = ExtResource("4_stb0q")
 
 [node name="Deselect All" type="Button" parent="CanvasLayer"]
 anchors_preset = 8

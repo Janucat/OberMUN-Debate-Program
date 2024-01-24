@@ -1,12 +1,11 @@
-class_name Data
-
-extends Node2D
+extends CanvasLayer
 
 var json_data = preload("res://json/data.json")
 var nations_data = []
 var nations_id = []
 var nations_name = {}
 var nations_image = {}
+signal data_created
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,6 +24,9 @@ func _ready():
 		nations_image.merge({
 			nations_id[i]: nations_data[i].get("image")
 		})
+	
+	data_created.emit()
+	
 	
 
 	
