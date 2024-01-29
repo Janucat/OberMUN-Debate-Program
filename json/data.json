@@ -15,5 +15,70 @@
 			"name": "Australia",
 			"image": "AUS.png"
 		},
+		{
+			"id": "bulgaria",
+			"name": "Bulgaria",
+			"image": "BGR.png"
+		},
+		{
+			"id": "brasil",
+			"name": "Brasil",
+			"image": "BRA.png"
+		},
+		{
+			"id": "canada",
+			"name": "Canada",
+			"image": "CAN.png"
+		},
+		{
+			"id": "china",
+			"name": "China",
+			"image": "CHN.png"
+		},
+		{
+			"id": "colombia",
+			"name": "Colombia",
+			"image": "COL.png"
+		},
+		{
+			"id": "germany",
+			"name": "Germany",
+			"image": "DEU.png"
+		},
+		{
+			"id": "denmark",
+			"name": "Denmark",
+			"image": "DNK.png"
+		},
+		{
+			"id": "egypt",
+			"name": "Egypt",
+			"image": "EGY.png"
+		},
+		{
+			"id": "spain",
+			"name": "Spain",
+			"image": "ESP.png"
+		},
+		{
+			"id": "finland",
+			"name": "Finland",
+			"image": "FNL.png"
+		},
+		{
+			"id": "france",
+			"name": "France",
+			"image": "FRA.png"
+		},
+		{
+			"id": "unitedkingdom",
+			"name": "United Kingdom",
+			"image": "GBR.png"
+		},
+		{
+			"id": "greece",
+			"name": "Greece",
+			"image": "GRC.png"
+		},
 	]
 }
