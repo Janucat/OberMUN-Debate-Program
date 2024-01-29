@@ -1,15 +1,16 @@
-extends Button
+extends CheckBox
 
-@onready var container = $"../UNEP Container/GridContainer"
-
+var id = ""
+signal pressed_id
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.pressed.connect(start_session)
+	self.toggled.connect(signal_pressed_id)
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-func start_session():
-	print(container.nations_selected)
 	
+func signal_pressed_id(toggled):
+	pressed_id.emit(toggled, id)
