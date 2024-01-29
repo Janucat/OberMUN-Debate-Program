@@ -118,12 +118,14 @@ offset_right = 165.0
 offset_bottom = -1.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-item_count = 2
+item_count = 3
 selected = 0
 popup/item_0/text = "Select a Topic"
 popup/item_0/id = 0
 popup/item_1/text = "Sample"
 popup/item_1/id = 1
+popup/item_2/text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+popup/item_2/id = 2
 
 [node name="SelectSession" type="OptionButton" parent="CanvasLayer/SelectionButtons"]
 layout_mode = 1
