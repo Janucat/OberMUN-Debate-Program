@@ -18,6 +18,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("1_87lbl")
 
 [node name="BackGround" type="ColorRect" parent="CanvasLayer"]
@@ -296,3 +297,121 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_p3mpu")
 text = "Deselect All"
+
+[node name="Session" type="CanvasLayer" parent="."]
+
+[node name="BackGround" type="ColorRect" parent="Session"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.54902, 0.180392, 0.329412, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Icon" type="TextureRect" parent="Session"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -518.0
+offset_top = 100.0
+offset_right = -262.0
+offset_bottom = 356.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_js6lg")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="TextEdit" parent="Session"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.603125
+anchor_bottom = 0.03
+offset_left = -697.0
+offset_top = 237.0
+offset_right = -365.0
+offset_bottom = 277.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dvyph")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qehjq")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_3ehh0")
+text = "OberMUN 2024 Debate Manager"
+editable = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Delegates" type="TextEdit" parent="Session"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -771.0
+offset_top = 306.0
+offset_right = -445.0
+offset_bottom = 337.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Delegates:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="SpeakerList" type="TextEdit" parent="Session"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -408.0
+offset_top = 307.0
+offset_right = -82.0
+offset_bottom = 338.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Speaker's list:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="President" type="TextEdit" parent="Session"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 35.0
+offset_right = 217.0
+offset_bottom = 258.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Commitee:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Commitee" type="TextEdit" parent="Session"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 238.0
+offset_top = 35.0
+offset_right = 761.0
+offset_bottom = 257.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Commitee:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
