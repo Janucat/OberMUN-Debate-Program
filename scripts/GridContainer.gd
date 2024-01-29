@@ -1,6 +1,7 @@
 extends GridContainer
 
 @onready var data = get_node("../..")
+var state_check_box = preload("res://state_check_box.tscn")
 
 var file_path = "res://art/Flags/%s"
 
@@ -15,7 +16,7 @@ func _process(delta):
 
 func list_checkboxes():
 	for i in data.nations_id.size():
-		var checkbox = CheckBox.new()
+		var checkbox = state_check_box.instantiate()
 		var icon = load(file_path % data.nations_image.get(data.nations_id[i]))
 		checkbox.icon = icon
 		checkbox.text = data.nations_name.get(data.nations_id[i])
