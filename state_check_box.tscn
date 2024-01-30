@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bawanrrjjlv4b"]
+[gd_scene load_steps=7 format=3 uid="uid://bawanrrjjlv4b"]
+
+[ext_resource type="Script" path="res://scripts/state_check_box.gd" id="1_pc8qx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_60evd"]
 
@@ -18,3 +20,4 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_om6oq")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_1k4wa")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lops4")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_myy6q")
+script = ExtResource("1_pc8qx")
