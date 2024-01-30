@@ -14,6 +14,8 @@ var comm_pres = {}
 var comm_vice = {}
 var comm_mod = {}
 
+var sessions = 0
+
 signal data_created
 
 # Called when the node enters the scene tree for the first time.
@@ -51,6 +53,8 @@ func _ready():
 		comm_mod.merge({
 			comm_id[i]: comm_data[i].get("mod")
 		})
+	
+	sessions = json_data.data.get("sessions")
 		
 	data_created.emit()
 
