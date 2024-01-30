@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://b1tj6xcmdi5fk"]
+[gd_scene load_steps=15 format=3 uid="uid://b1tj6xcmdi5fk"]
 
 [ext_resource type="Script" path="res://scripts/data_setup.gd" id="1_87lbl"]
 [ext_resource type="Texture2D" uid="uid://kvk8oiao20m4" path="res://art/icons/Obermun.png" id="1_js6lg"]
 [ext_resource type="Script" path="res://scripts/GridContainer.gd" id="3_i8m8r"]
+[ext_resource type="Script" path="res://scripts/SelectCommittee.gd" id="3_myi24"]
+[ext_resource type="Script" path="res://scripts/SelectTopic.gd" id="4_s0o58"]
 [ext_resource type="Script" path="res://scripts/start_session.gd" id="4_stb0q"]
 [ext_resource type="Script" path="res://scripts/select_all_button.gd" id="4_t0tua"]
+[ext_resource type="Script" path="res://scripts/SelectSession.gd" id="5_lfhms"]
 [ext_resource type="Script" path="res://scripts/deselect_all_button.gd" id="6_5hk60"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvyph"]
@@ -80,7 +83,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SelectCommitee" type="OptionButton" parent="MainMenu/SelectionButtons"]
+[node name="SelectCommittee" type="OptionButton" parent="MainMenu/SelectionButtons"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -92,22 +95,12 @@ offset_bottom = -1.0
 grow_horizontal = 2
 theme = SubResource("Theme_cdk4x")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-item_count = 7
+item_count = 1
 selected = 0
-popup/item_0/text = "Select a commitee"
+popup/item_0/text = "Select a committee"
 popup/item_0/id = 0
-popup/item_1/text = "CSW"
-popup/item_1/id = 1
-popup/item_2/text = "ECOSOC"
-popup/item_2/id = 2
-popup/item_3/text = "OHCHR"
-popup/item_3/id = 3
-popup/item_4/text = "UNEP"
-popup/item_4/id = 4
-popup/item_5/text = "UNSC"
-popup/item_5/id = 5
-popup/item_6/text = "WHO"
-popup/item_6/id = 6
+script = ExtResource("3_myi24")
+metadata/_edit_use_anchors_ = true
 
 [node name="SelectTopic" type="OptionButton" parent="MainMenu/SelectionButtons"]
 layout_mode = 1
@@ -120,12 +113,12 @@ offset_right = 165.0
 offset_bottom = -1.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-item_count = 2
+text_overrun_behavior = 3
+item_count = 1
 selected = 0
-popup/item_0/text = "Select a Topic"
+popup/item_0/text = "Select a topic"
 popup/item_0/id = 0
-popup/item_1/text = "Sample"
-popup/item_1/id = 1
+script = ExtResource("4_s0o58")
 
 [node name="SelectSession" type="OptionButton" parent="MainMenu/SelectionButtons"]
 layout_mode = 1
@@ -142,6 +135,7 @@ item_count = 1
 selected = 0
 popup/item_0/text = "Select a session"
 popup/item_0/id = 0
+script = ExtResource("5_lfhms")
 
 [node name="Texts" type="Control" parent="MainMenu"]
 layout_mode = 3
