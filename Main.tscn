@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bi0i1nagrn1hf"]
+[gd_scene load_steps=12 format=3 uid="uid://b1tj6xcmdi5fk"]
 
 [ext_resource type="Script" path="res://scripts/data_setup.gd" id="1_87lbl"]
 [ext_resource type="Texture2D" uid="uid://kvk8oiao20m4" path="res://art/icons/Obermun.png" id="1_js6lg"]
 [ext_resource type="Script" path="res://scripts/GridContainer.gd" id="3_i8m8r"]
-[ext_resource type="Script" path="res://select_all_button.gd" id="4_j2yn6"]
 [ext_resource type="Script" path="res://scripts/start_session.gd" id="4_stb0q"]
+[ext_resource type="Script" path="res://scripts/select_all_button.gd" id="4_t0tua"]
 [ext_resource type="Script" path="res://scripts/deselect_all_button.gd" id="6_5hk60"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvyph"]
@@ -265,7 +265,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_p3mpu")
 text = "Select All"
-script = ExtResource("4_j2yn6")
+script = ExtResource("4_t0tua")
 
 [node name="Start Session" type="Button" parent="MainMenu"]
 anchors_preset = 8
