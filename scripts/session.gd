@@ -22,6 +22,7 @@ extends CanvasLayer
 var delegate_obj = preload("res://delegate_list_object.tscn")
 
 var del_list = []
+var speak_list = []
 
 func _ready():
 	start_session.start_session.connect(start)
@@ -39,20 +40,53 @@ func start():
 	session.text = str(sel_session.session)
 	
 	for i in sel_nations.nations_selected.size():
-		var del = delegate_obj.instantiate()
-		del.id = sel_nations.nations_selected[i]
-		del.icon = main.nations_image.get(sel_nations.nations_selected[i])
-		del.warn.connect(warnf)
-		del.left.connect(leftf)
-		del.right.connect(rightf)
+		create_del(sel_nations.nations_selected[i], del_list_o)
+		del_list.append(sel_nations.nations_selected[i])
 		
 		
+func create_del(id, list_o):
+	var del = delegate_obj.instantiate()
+	del.id = id
+	del.icon = main.nations_image.get(id)
+	del.text = main.nations_name.get(id)
+	del.warn.connect(warnf)
+	del.left.connect(leftf)
+	del.right.connect(rightf)
+	list_o.add_child(del)
 
 func warnf(id):
 	pass
 
 func leftf(id):
-	pass
+	if !del_list.has(id):
+		speak_list.erase(id)
+		del_list.append(id)
+		
+		var imax = del_list_o.get_children().size()
+		for i in imax:
+			del_list_o.remove_child(del_list_o.get_children()[0])
+		imax = speak_list_o.get_children().size()
+		for i in imax:
+			speak_list_o.remove_child(speak_list_o.get_children()[0])
+		
+		for i in del_list.size():
+			create_del(del_list[i], del_list_o)
+		for i in speak_list.size():
+			create_del(speak_list[i], speak_list_o)
 
 func rightf(id):
-	pass
+	if !speak_list.has(id):
+		del_list.erase(id)
+		speak_list.append(id)
+		
+		var imax = del_list_o.get_children().size()
+		for i in imax:
+			del_list_o.remove_child(del_list_o.get_children()[0])
+		imax = speak_list_o.get_children().size()
+		for i in imax:
+			speak_list_o.remove_child(speak_list_o.get_children()[0])
+		
+		for i in del_list.size():
+			create_del(del_list[i], del_list_o)
+		for i in speak_list.size():
+			create_del(speak_list[i], speak_list_o)

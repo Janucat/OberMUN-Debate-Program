@@ -3,11 +3,15 @@
 [ext_resource type="Script" path="res://scripts/delegate_list_object.gd" id="1_xtd47"]
 
 [node name="delegate_list_object" type="TextEdit"]
+custom_minimum_size = Vector2(269, 30)
+layout_direction = 1
 offset_left = 32.0
 offset_right = 301.0
 offset_bottom = 30.0
+size_flags_horizontal = 0
 placeholder_text = "<error>"
 editable = false
+scroll_fit_content_height = true
 caret_blink_interval = 0.57
 script = ExtResource("1_xtd47")
 
