@@ -1,0 +1,177 @@
+[gd_scene load_steps=6 format=3 uid="uid://cha7cyhvt32do"]
+
+[ext_resource type="Script" path="res://Timer.gd" id="1_7ry0a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_168ke"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_unhso"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s07g1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pherq"]
+
+[node name="Timer" type="PanelContainer"]
+offset_right = 300.0
+offset_bottom = 200.0
+script = ExtResource("1_7ry0a")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Clock" type="Timer" parent="."]
+autostart = true
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 2
+text = "		Minutes:					Seconds:"
+
+[node name="Start" type="Button" parent="TextEdit"]
+layout_mode = 2
+offset_left = 38.0
+offset_top = 132.0
+offset_right = 109.0
+offset_bottom = 172.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_168ke")
+text = "Start"
+
+[node name="Stop" type="Button" parent="TextEdit"]
+layout_mode = 2
+offset_left = 184.0
+offset_top = 132.0
+offset_right = 263.0
+offset_bottom = 182.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_168ke")
+text = "Stop
+"
+
+[node name="MinCounter" type="TextEdit" parent="TextEdit"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 34.0
+offset_right = 98.0
+offset_bottom = 77.0
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_unhso")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s07g1")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_pherq")
+text = "0"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+middle_mouse_paste_enabled = false
+
+[node name="SecCounter" type="TextEdit" parent="TextEdit"]
+offset_left = 200.0
+offset_top = 34.0
+offset_right = 251.0
+offset_bottom = 77.0
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_unhso")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s07g1")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_pherq")
+text = "0"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+middle_mouse_paste_enabled = false
+
+[node name="MinControl" type="Control" parent="TextEdit"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="+1" type="Button" parent="TextEdit/MinControl"]
+layout_mode = 2
+offset_left = 49.0
+offset_top = 80.0
+offset_right = 76.0
+offset_bottom = 111.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_168ke")
+text = "+1"
+
+[node name="-1" type="Button" parent="TextEdit/MinControl"]
+layout_mode = 2
+offset_left = 77.0
+offset_top = 80.0
+offset_right = 104.0
+offset_bottom = 111.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_168ke")
+text = "-1"
+
+[node name="+10" type="Button" parent="TextEdit/MinControl"]
+layout_mode = 2
+offset_left = 12.0
+offset_top = 80.0
+offset_right = 48.0
+offset_bottom = 111.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_168ke")
+text = "+10"
+
+[node name="-10" type="Button" parent="TextEdit/MinControl"]
+layout_mode = 2
+offset_left = 105.0
+offset_top = 80.0
+offset_right = 137.0
+offset_bottom = 111.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_168ke")
+text = "-10"
+
+[node name="SecControl" type="Control" parent="TextEdit"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="+1" type="Button" parent="TextEdit/SecControl"]
+layout_mode = 2
+offset_left = 201.0
+offset_top = 80.0
+offset_right = 228.0
+offset_bottom = 111.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_168ke")
+text = "+1"
+
+[node name="-1" type="Button" parent="TextEdit/SecControl"]
+layout_mode = 2
+offset_left = 229.0
+offset_top = 80.0
+offset_right = 256.0
+offset_bottom = 111.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_168ke")
+text = "-1"
+
+[node name="+10" type="Button" parent="TextEdit/SecControl"]
+layout_mode = 2
+offset_left = 164.0
+offset_top = 80.0
+offset_right = 200.0
+offset_bottom = 111.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_168ke")
+text = "+10"
+
+[node name="-10" type="Button" parent="TextEdit/SecControl"]
+layout_mode = 2
+offset_left = 257.0
+offset_top = 80.0
+offset_right = 289.0
+offset_bottom = 111.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_168ke")
+text = "-10"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Clock" to="." method="_on_clock_timeout"]
+[connection signal="pressed" from="TextEdit/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="TextEdit/Stop" to="." method="_on_stop_pressed"]
+[connection signal="pressed" from="TextEdit/MinControl/+1" to="." method="_on_Min1p_pressed"]
+[connection signal="pressed" from="TextEdit/MinControl/-1" to="." method="_on_Min1n_pressed"]
+[connection signal="pressed" from="TextEdit/MinControl/+10" to="." method="_on_Min10p_pressed"]
+[connection signal="pressed" from="TextEdit/MinControl/-10" to="." method="_on_Min10n_pressed"]
+[connection signal="pressed" from="TextEdit/SecControl/+1" to="." method="_on_sec1p_pressed"]
+[connection signal="pressed" from="TextEdit/SecControl/-1" to="." method="_on_sec1n_pressed"]
+[connection signal="pressed" from="TextEdit/SecControl/+10" to="." method="_on_sec10p_pressed"]
+[connection signal="pressed" from="TextEdit/SecControl/-10" to="." method="_on_sec10n_pressed"]

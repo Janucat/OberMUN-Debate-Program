@@ -30,7 +30,7 @@
 			"president": "Zane Francesca",
 			"vice": "Tranchitella Sophia",
 			"mod": ""
-		},
+		}
 	],
 	"nations": [
 		{
@@ -112,6 +112,6 @@
 			"id": "greece",
 			"name": "Greece",
 			"image": "GRC.png"
-		},
+		}
 	]
 }
