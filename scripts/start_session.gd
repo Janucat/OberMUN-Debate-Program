@@ -1,15 +1,24 @@
 extends Button
 
 @onready var container = $"../UNEP Container/GridContainer"
+@onready var comm_button = $"../SelectionButtons/SelectCommittee"
+@onready var topic_button = $"../SelectionButtons/SelectTopic"
+@onready var session_button = $"../SelectionButtons/SelectSession"
+@onready var main_menu = $".."
+@onready var session = $"../../Session"
 
-# Called when the node enters the scene tree for the first time.
+
+signal start_session
+
 func _ready():
-	self.pressed.connect(start_session)
+	self.pressed.connect(start_session_func)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	pass
 
-func start_session():
-	print(container.nations_selected)
+func start_session_func():
+	main_menu.hide()
+	session.show()
+	start_session.emit()
 	

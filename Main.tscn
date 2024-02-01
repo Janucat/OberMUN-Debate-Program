@@ -1,9 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://bi0i1nagrn1hf"]
+[gd_scene load_steps=16 format=3 uid="uid://bskv38bd6pgmj"]
 
 [ext_resource type="Script" path="res://scripts/data_setup.gd" id="1_87lbl"]
 [ext_resource type="Texture2D" uid="uid://kvk8oiao20m4" path="res://art/icons/Obermun.png" id="1_js6lg"]
 [ext_resource type="Script" path="res://scripts/GridContainer.gd" id="3_i8m8r"]
+[ext_resource type="Script" path="res://scripts/SelectCommittee.gd" id="3_myi24"]
+[ext_resource type="Script" path="res://scripts/SelectTopic.gd" id="4_s0o58"]
 [ext_resource type="Script" path="res://scripts/start_session.gd" id="4_stb0q"]
+[ext_resource type="Script" path="res://scripts/select_all_button.gd" id="4_t0tua"]
+[ext_resource type="Script" path="res://scripts/SelectSession.gd" id="5_lfhms"]
+[ext_resource type="Script" path="res://scripts/deselect_all_button.gd" id="6_5hk60"]
+[ext_resource type="Script" path="res://scripts/session.gd" id="10_pu1f3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvyph"]
 
@@ -18,6 +24,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("1_87lbl")
 
 [node name="BackGround" type="ColorRect" parent="MainMenu"]
@@ -78,7 +85,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SelectCommitee" type="OptionButton" parent="MainMenu/SelectionButtons"]
+[node name="SelectCommittee" type="OptionButton" parent="MainMenu/SelectionButtons"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -90,22 +97,12 @@ offset_bottom = -1.0
 grow_horizontal = 2
 theme = SubResource("Theme_cdk4x")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-item_count = 7
+item_count = 1
 selected = 0
-popup/item_0/text = "Select a commitee"
+popup/item_0/text = "Select a committee"
 popup/item_0/id = 0
-popup/item_1/text = "CSW"
-popup/item_1/id = 1
-popup/item_2/text = "ECOSOC"
-popup/item_2/id = 2
-popup/item_3/text = "OHCHR"
-popup/item_3/id = 3
-popup/item_4/text = "UNEP"
-popup/item_4/id = 4
-popup/item_5/text = "UNSC"
-popup/item_5/id = 5
-popup/item_6/text = "WHO"
-popup/item_6/id = 6
+script = ExtResource("3_myi24")
+metadata/_edit_use_anchors_ = true
 
 [node name="SelectTopic" type="OptionButton" parent="MainMenu/SelectionButtons"]
 layout_mode = 1
@@ -118,12 +115,12 @@ offset_right = 165.0
 offset_bottom = -1.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-item_count = 2
+text_overrun_behavior = 3
+item_count = 1
 selected = 0
-popup/item_0/text = "Select a Topic"
+popup/item_0/text = "Select a topic"
 popup/item_0/id = 0
-popup/item_1/text = "Sample"
-popup/item_1/id = 1
+script = ExtResource("4_s0o58")
 
 [node name="SelectSession" type="OptionButton" parent="MainMenu/SelectionButtons"]
 layout_mode = 1
@@ -140,6 +137,7 @@ item_count = 1
 selected = 0
 popup/item_0/text = "Select a session"
 popup/item_0/id = 0
+script = ExtResource("5_lfhms")
 
 [node name="Texts" type="Control" parent="MainMenu"]
 layout_mode = 3
@@ -155,7 +153,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Commitee" type="TextEdit" parent="MainMenu/Texts"]
+[node name="Committee" type="TextEdit" parent="MainMenu/Texts"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -193,7 +191,7 @@ context_menu_enabled = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="Topics2" type="TextEdit" parent="MainMenu/Texts"]
+[node name="Delegates" type="TextEdit" parent="MainMenu/Texts"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -263,6 +261,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_p3mpu")
 text = "Select All"
+script = ExtResource("4_t0tua")
 
 [node name="Start Session" type="Button" parent="MainMenu"]
 anchors_preset = 8
@@ -296,9 +295,10 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_p3mpu")
 text = "Deselect All"
+script = ExtResource("6_5hk60")
 
 [node name="Session" type="CanvasLayer" parent="."]
-visible = false
+script = ExtResource("10_pu1f3")
 
 [node name="BackGround" type="ColorRect" parent="Session"]
 anchors_preset = 15
@@ -367,9 +367,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -408.0
-offset_top = 307.0
+offset_top = 306.0
 offset_right = -82.0
-offset_bottom = 338.0
+offset_bottom = 337.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
@@ -380,54 +380,301 @@ context_menu_enabled = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="President" type="TextEdit" parent="Session"]
+[node name="Labels" type="Control" parent="Session"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PresidentLabel" type="TextEdit" parent="Session/Labels"]
+layout_direction = 3
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -48.0
-offset_top = 35.0
-offset_right = 217.0
-offset_bottom = 258.0
+offset_left = -907.0
+offset_top = 33.0
+offset_right = -742.0
+offset_bottom = 64.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 0
-text = "Commitee:"
+text = "President:"
 editable = false
 context_menu_enabled = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="Commitee" type="TextEdit" parent="Session"]
+[node name="ViceLabel" type="TextEdit" parent="Session/Labels"]
+layout_direction = 3
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 238.0
-offset_top = 35.0
-offset_right = 761.0
-offset_bottom = 257.0
+offset_left = -907.0
+offset_top = 70.0
+offset_right = -742.0
+offset_bottom = 101.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 0
-text = "Commitee:"
+text = "Vice:"
 editable = false
 context_menu_enabled = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="UNEP Container" type="ScrollContainer" parent="Session"]
-anchors_preset = 8
+[node name="ModeratorLabel" type="TextEdit" parent="Session/Labels"]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -161.0
-offset_top = 66.0
-offset_right = 165.0
-offset_bottom = 228.0
+offset_left = -907.0
+offset_top = 106.0
+offset_right = -742.0
+offset_bottom = 137.0
 grow_horizontal = 2
-grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Moderator:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
 
-[node name="GridContainer" type="GridContainer" parent="Session/UNEP Container"]
+[node name="CommitteeLabel" type="TextEdit" parent="Session/Labels"]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -908.0
+offset_top = 155.0
+offset_right = -743.0
+offset_bottom = 186.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Committee:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="SessionLabel" type="TextEdit" parent="Session/Labels"]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -908.0
+offset_top = 192.0
+offset_right = -743.0
+offset_bottom = 223.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Session:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="TopicLabel" type="TextEdit" parent="Session/Labels"]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -908.0
+offset_top = 228.0
+offset_right = -743.0
+offset_bottom = 259.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Topic:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Texts" type="Control" parent="Session"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="President" type="TextEdit" parent="Session/Texts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 920.0
+offset_top = 33.0
+offset_right = 1420.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+placeholder_text = "N/A"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Vice" type="TextEdit" parent="Session/Texts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 920.0
+offset_top = 70.0
+offset_right = 1420.0
+offset_bottom = 101.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+placeholder_text = "N/A"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Moderator" type="TextEdit" parent="Session/Texts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 920.0
+offset_top = 106.0
+offset_right = 1420.0
+offset_bottom = 137.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+placeholder_text = "N/A"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Committee" type="TextEdit" parent="Session/Texts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 919.0
+offset_top = 155.0
+offset_right = 1419.0
+offset_bottom = 186.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+placeholder_text = "N/A"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Session" type="TextEdit" parent="Session/Texts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 919.0
+offset_top = 192.0
+offset_right = 1419.0
+offset_bottom = 223.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+placeholder_text = "N/A"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Topic" type="TextEdit" parent="Session/Texts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 919.0
+offset_top = 228.0
+offset_right = 1419.0
+offset_bottom = 338.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+placeholder_text = "N/A"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+wrap_mode = 1
+
+[node name="DelegatesList" type="ScrollContainer" parent="Session"]
+offset_left = 29.0
+offset_top = 347.0
+offset_right = 355.0
+offset_bottom = 765.0
+
+[node name="GridContainer" type="GridContainer" parent="Session/DelegatesList"]
 layout_mode = 2
+
+[node name="Texture" type="TextEdit" parent="Session"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -771.0
+offset_top = 347.0
+offset_right = -445.0
+offset_bottom = 766.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="SpeakersList" type="ScrollContainer" parent="Session"]
+offset_left = 392.0
+offset_top = 347.0
+offset_right = 718.0
+offset_bottom = 765.0
+
+[node name="GridContainer" type="GridContainer" parent="Session/SpeakersList"]
+layout_mode = 2
+
+[node name="Texture2" type="TextEdit" parent="Session"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -408.0
+offset_top = 347.0
+offset_right = -82.0
+offset_bottom = 766.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false

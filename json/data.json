@@ -1,4 +1,37 @@
 {
+	"sessions": 6,
+	"committees": [
+		{
+			"committee": "CSW",
+			"topics": [
+				"Ensuring gender equality through the improvement  of girls’ access to education in rural countries in order to enable equal opportunities",
+				"Empowering women’s rights by guaranteeing free choice on abortion"
+			],
+			"president": "Tranchitella Greta",
+			"vice": "Zecchini Alice",
+			"mod": ""
+		},
+		{
+			"committee": "ECOSOC",
+			"topics": [
+				"Decriminalisation and legalisation of soft drug sale for recreational use",
+				"Ensuring relationships between youth and institutions in order to create job opportunities for younger generations"
+			],
+			"president": "Longo Giulia",
+			"vice": "Lasorte Francesca",
+			"mod": ""
+		},
+		{
+			"committee": "OHCHR",
+			"topics": [
+				"Safeguarding LGBTQ+ parenting and step-child adoption by single and same sex couple",
+				"The effect and impact the Covid-19 pandemic had on mental health"
+			],
+			"president": "Zane Francesca",
+			"vice": "Tranchitella Sophia",
+			"mod": ""
+		},
+	],
 	"nations": [
 		{
 			"id": "argentina",
