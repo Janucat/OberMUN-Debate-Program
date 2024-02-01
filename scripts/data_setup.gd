@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+@onready var session = $"../Session"
+
 var json_data = preload("res://json/data.json")
 
 var nations_data = []
@@ -20,6 +22,9 @@ signal data_created
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	show()
+	session.hide()
+	
 	nations_data = json_data.data.get("nations")
 	
 	# Assigning ids to nations_id
