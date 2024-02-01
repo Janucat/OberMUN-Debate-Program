@@ -627,15 +627,6 @@ selecting_enabled = false
 drag_and_drop_selection_enabled = false
 wrap_mode = 1
 
-[node name="DelegatesList" type="ScrollContainer" parent="Session"]
-offset_left = 29.0
-offset_top = 347.0
-offset_right = 355.0
-offset_bottom = 765.0
-
-[node name="GridContainer" type="GridContainer" parent="Session/DelegatesList"]
-layout_mode = 2
-
 [node name="Texture" type="TextEdit" parent="Session"]
 anchors_preset = 5
 anchor_left = 0.5
@@ -653,13 +644,13 @@ context_menu_enabled = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="SpeakersList" type="ScrollContainer" parent="Session"]
-offset_left = 392.0
+[node name="DelegatesList" type="ScrollContainer" parent="Session"]
+offset_left = 29.0
 offset_top = 347.0
-offset_right = 718.0
+offset_right = 355.0
 offset_bottom = 765.0
 
-[node name="GridContainer" type="GridContainer" parent="Session/SpeakersList"]
+[node name="GridContainer" type="GridContainer" parent="Session/DelegatesList"]
 layout_mode = 2
 
 [node name="Texture2" type="TextEdit" parent="Session"]
@@ -678,3 +669,12 @@ editable = false
 context_menu_enabled = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
+
+[node name="SpeakersList" type="ScrollContainer" parent="Session"]
+offset_left = 392.0
+offset_top = 347.0
+offset_right = 718.0
+offset_bottom = 765.0
+
+[node name="GridContainer" type="GridContainer" parent="Session/SpeakersList"]
+layout_mode = 2
