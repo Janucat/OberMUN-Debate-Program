@@ -31,6 +31,25 @@ offset_bottom = 30.0
 theme_override_font_sizes/font_size = 15
 text = ">"
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -28.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 28.0
+
+[node name="WarnCount" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 3.0
+offset_right = 192.0
+offset_bottom = 34.0
+theme_override_colors/font_readonly_color = Color(1, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+placeholder_text = "0"
+editable = false
+scroll_fit_content_height = true
+
 [node name="LeftButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 180.0
@@ -38,10 +57,3 @@ offset_right = 209.0
 offset_bottom = 30.0
 theme_override_font_sizes/font_size = 15
 text = "<"
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = -28.0
-offset_top = 2.0
-offset_right = -2.0
-offset_bottom = 28.0
