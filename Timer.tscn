@@ -65,6 +65,7 @@ selecting_enabled = false
 middle_mouse_paste_enabled = false
 
 [node name="SecCounter" type="TextEdit" parent="TextEdit"]
+layout_mode = 0
 offset_left = 200.0
 offset_top = 34.0
 offset_right = 251.0

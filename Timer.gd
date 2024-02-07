@@ -17,6 +17,7 @@ extends PanelContainer
 @onready var sec_counter = $TextEdit/SecCounter
 
 @onready var timer = $Timer
+@onready var WarningPanel = $"../../Permanent/WarningPanel"
 
 func _ready():
 	timer.wait_time = 0.1
@@ -47,23 +48,23 @@ func _on_Min1p_pressed():
 		timer.wait_time += 1 * 60
 		updateCounterInit()
 
+
+
+
 func _on_Min1n_pressed():
 	if timer.is_stopped():
 		timer.wait_time -= 1 * 60
 		updateCounterInit()
-
 
 func _on_Min10p_pressed():
 	if timer.is_stopped():
 		timer.wait_time += 10 * 60
 		updateCounterInit()
 
-
 func _on_Min10n_pressed():
 	if timer.is_stopped():
 		timer.wait_time -= 10 * 60
 		updateCounterInit()
-
 
 func _on_sec1p_pressed():
 	if timer.is_stopped():
@@ -86,4 +87,6 @@ func _on_sec10n_pressed():
 		updateCounterInit()
 
 func _on_timer_timeout():
-	pass
+	timer.stop()
+	updateCounterInit()
+	WarningPanel.show()
