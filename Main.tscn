@@ -1,4 +1,5 @@
-[gd_scene load_steps=16 format=3 uid="uid://bskv38bd6pgmj"]
+[gd_scene load_steps=21 format=3 uid="uid://bi0i1nagrn1hf"]
+
 
 [ext_resource type="Script" path="res://scripts/data_setup.gd" id="1_87lbl"]
 [ext_resource type="Texture2D" uid="uid://kvk8oiao20m4" path="res://art/icons/Obermun.png" id="1_js6lg"]
@@ -10,6 +11,8 @@
 [ext_resource type="Script" path="res://scripts/SelectSession.gd" id="5_lfhms"]
 [ext_resource type="Script" path="res://scripts/deselect_all_button.gd" id="6_5hk60"]
 [ext_resource type="Script" path="res://scripts/session.gd" id="10_pu1f3"]
+[ext_resource type="PackedScene" uid="uid://cha7cyhvt32do" path="res://Timer.tscn" id="11_0yosp"]
+[ext_resource type="Script" path="res://WarningPanel.gd" id="11_m7d3u"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvyph"]
 
@@ -19,12 +22,17 @@
 
 [sub_resource type="Theme" id="Theme_cdk4x"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tkvwg"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3mpu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lcwv1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_urj2i"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("1_87lbl")
 
 [node name="BackGround" type="ColorRect" parent="MainMenu"]
@@ -97,6 +105,7 @@ offset_bottom = -1.0
 grow_horizontal = 2
 theme = SubResource("Theme_cdk4x")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tkvwg")
 item_count = 1
 selected = 0
 popup/item_0/text = "Select a committee"
@@ -115,6 +124,7 @@ offset_right = 165.0
 offset_bottom = -1.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tkvwg")
 text_overrun_behavior = 3
 item_count = 1
 selected = 0
@@ -133,6 +143,7 @@ offset_right = 550.0
 offset_bottom = -1.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tkvwg")
 item_count = 1
 selected = 0
 popup/item_0/text = "Select a session"
@@ -298,6 +309,8 @@ text = "Deselect All"
 script = ExtResource("6_5hk60")
 
 [node name="Session" type="CanvasLayer" parent="."]
+layer = 0
+visible = false
 script = ExtResource("10_pu1f3")
 
 [node name="BackGround" type="ColorRect" parent="Session"]
@@ -678,3 +691,73 @@ offset_bottom = 765.0
 
 [node name="GridContainer" type="GridContainer" parent="Session/SpeakersList"]
 layout_mode = 2
+
+[node name="Timer" parent="Session" instance=ExtResource("11_0yosp")]
+offset_left = 1131.0
+offset_top = 626.0
+offset_right = 1431.0
+offset_bottom = 826.0
+
+[node name="SelectCommittee2" type="OptionButton" parent="Session"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 317.0
+offset_top = 582.0
+offset_right = 643.0
+offset_bottom = 613.0
+grow_horizontal = 2
+theme = SubResource("Theme_cdk4x")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lcwv1")
+item_count = 3
+selected = 0
+popup/item_0/text = "Timer"
+popup/item_0/id = 0
+popup/item_1/text = "Moderated Cacus"
+popup/item_1/id = 1
+popup/item_2/text = "Simple Cacus"
+popup/item_2/id = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Permanent" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="WarningPanel" type="TextEdit" parent="Permanent"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 286.0
+offset_top = 172.0
+offset_right = 683.0
+offset_bottom = 380.0
+grow_horizontal = 2
+grow_vertical = 2
+auto_translate = false
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+text = "	 TIME IS UP"
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+script = ExtResource("11_m7d3u")
+
+[node name="Button" type="Button" parent="Permanent/WarningPanel"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 92.0
+offset_right = 255.0
+offset_bottom = 196.0
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_urj2i")
+text = "OK"
+
+[connection signal="pressed" from="Permanent/WarningPanel/Button" to="Permanent/WarningPanel" method="_on_button_pressed"]
