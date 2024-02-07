@@ -49,44 +49,39 @@ func create_del(id, list_o):
 	del.id = id
 	del.icon = main.nations_image.get(id)
 	del.text = main.nations_name.get(id)
-	del.warn.connect(warnf)
+	del.set_warn(main.nations_warn.get(id))
 	del.left.connect(leftf)
 	del.right.connect(rightf)
+	del.warn.connect(warnf)
 	list_o.add_child(del)
+	
 
 func warnf(id):
-	pass
+	main.nations_warn[id] += 1
+	refresh()
+	
 
 func leftf(id):
 	if !del_list.has(id):
 		speak_list.erase(id)
 		del_list.append(id)
-		
-		var imax = del_list_o.get_children().size()
-		for i in imax:
-			del_list_o.remove_child(del_list_o.get_children()[0])
-		imax = speak_list_o.get_children().size()
-		for i in imax:
-			speak_list_o.remove_child(speak_list_o.get_children()[0])
-		
-		for i in del_list.size():
-			create_del(del_list[i], del_list_o)
-		for i in speak_list.size():
-			create_del(speak_list[i], speak_list_o)
+		refresh()
 
 func rightf(id):
 	if !speak_list.has(id):
 		del_list.erase(id)
 		speak_list.append(id)
-		
-		var imax = del_list_o.get_children().size()
-		for i in imax:
-			del_list_o.remove_child(del_list_o.get_children()[0])
-		imax = speak_list_o.get_children().size()
-		for i in imax:
-			speak_list_o.remove_child(speak_list_o.get_children()[0])
-		
-		for i in del_list.size():
-			create_del(del_list[i], del_list_o)
-		for i in speak_list.size():
-			create_del(speak_list[i], speak_list_o)
+		refresh()
+
+func refresh():
+	var imax = del_list_o.get_children().size()
+	for i in imax:
+		del_list_o.remove_child(del_list_o.get_children()[0])
+	imax = speak_list_o.get_children().size()
+	for i in imax:
+		speak_list_o.remove_child(speak_list_o.get_children()[0])
+	
+	for i in del_list.size():
+		create_del(del_list[i], del_list_o)
+	for i in speak_list.size():
+		create_del(speak_list[i], speak_list_o)

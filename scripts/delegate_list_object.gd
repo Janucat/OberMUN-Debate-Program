@@ -4,20 +4,23 @@ extends TextEdit
 @onready var right_b = $RightButton
 @onready var left_b = $LeftButton
 
-@onready var texture_rect = $TextureRect
+@onready var warn_count = $WarnCount
 
-signal warn
+@onready var image = $TextureRect
+
 signal right
 signal left
+signal warn
 
 var icon = ""
 var id = ""
+var warns = 0
+
 
 func _ready():
 	warn_b.pressed.connect(warnf)
 	right_b.pressed.connect(rightf)
 	left_b.pressed.connect(leftf)
-	pass
 
 func _process(delta):
 	pass
@@ -30,3 +33,13 @@ func leftf():
 
 func rightf():
 	right.emit(id)
+
+func set_warn(count):
+	warns = count
+	print(warns)
+	print(warn_count)
+	
+	
+#func _enter_tree():
+#	var icon_path = load("res://art/Flags/%s" % icon)
+#	image.texture.set_texture(icon_path)

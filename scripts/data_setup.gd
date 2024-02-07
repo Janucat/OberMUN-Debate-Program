@@ -8,6 +8,7 @@ var nations_data = []
 var nations_id = []
 var nations_name = {}
 var nations_image = {}
+var nations_warn = {}
 
 var comm_data = []
 var comm_id = []
@@ -38,6 +39,9 @@ func _ready():
 		})
 		nations_image.merge({
 			nations_id[i]: nations_data[i].get("image")
+		})
+		nations_warn.merge({
+			nations_id[i]: 0
 		})
 	
 	comm_data = json_data.data.get("committees")
