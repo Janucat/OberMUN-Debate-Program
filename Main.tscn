@@ -1,6 +1,5 @@
 [gd_scene load_steps=21 format=3 uid="uid://bi0i1nagrn1hf"]
 
-
 [ext_resource type="Script" path="res://scripts/data_setup.gd" id="1_87lbl"]
 [ext_resource type="Texture2D" uid="uid://kvk8oiao20m4" path="res://art/icons/Obermun.png" id="1_js6lg"]
 [ext_resource type="Script" path="res://scripts/GridContainer.gd" id="3_i8m8r"]

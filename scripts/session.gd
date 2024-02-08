@@ -21,6 +21,8 @@ extends CanvasLayer
 
 var delegate_obj = preload("res://delegate_list_object.tscn")
 
+var file_path = "res://art/Flags/%s"
+
 var del_list = []
 var speak_list = []
 
@@ -49,7 +51,8 @@ func create_del(id, list_o):
 	del.id = id
 	del.icon = main.nations_image.get(id)
 	del.text = main.nations_name.get(id)
-	del.set_warn(main.nations_warn.get(id))
+	del.get_child(4).text = str(main.nations_warn.get(id))
+	del.get_child(2).texture = load(file_path % main.nations_image.get(id))
 	del.left.connect(leftf)
 	del.right.connect(rightf)
 	del.warn.connect(warnf)
