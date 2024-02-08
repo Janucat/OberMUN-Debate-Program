@@ -1,5 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bi0i1nagrn1hf"]
-
+[gd_scene load_steps=24 format=3 uid="uid://bi0i1nagrn1hf"]
 
 [ext_resource type="Script" path="res://scripts/data_setup.gd" id="1_87lbl"]
 [ext_resource type="Texture2D" uid="uid://kvk8oiao20m4" path="res://art/icons/Obermun.png" id="1_js6lg"]
@@ -13,6 +12,8 @@
 [ext_resource type="Script" path="res://scripts/session.gd" id="10_pu1f3"]
 [ext_resource type="PackedScene" uid="uid://cha7cyhvt32do" path="res://Timer.tscn" id="11_0yosp"]
 [ext_resource type="Script" path="res://WarningPanel.gd" id="11_m7d3u"]
+[ext_resource type="Script" path="res://VotingPage.gd" id="12_01ptb"]
+[ext_resource type="Script" path="res://VotingButton.gd" id="12_pvsap"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvyph"]
 
@@ -28,11 +29,14 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lcwv1"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03vp1"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_urj2i"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("1_87lbl")
 
 [node name="BackGround" type="ColorRect" parent="MainMenu"]
@@ -310,7 +314,6 @@ script = ExtResource("6_5hk60")
 
 [node name="Session" type="CanvasLayer" parent="."]
 layer = 0
-visible = false
 script = ExtResource("10_pu1f3")
 
 [node name="BackGround" type="ColorRect" parent="Session"]
@@ -658,6 +661,7 @@ selecting_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="DelegatesList" type="ScrollContainer" parent="Session"]
+z_index = 3
 offset_left = 29.0
 offset_top = 347.0
 offset_right = 355.0
@@ -684,6 +688,7 @@ selecting_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="SpeakersList" type="ScrollContainer" parent="Session"]
+z_index = 3
 offset_left = 392.0
 offset_top = 347.0
 offset_right = 718.0
@@ -719,6 +724,109 @@ popup/item_1/id = 1
 popup/item_2/text = "Simple Cacus"
 popup/item_2/id = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="VotingButton" type="Button" parent="Session"]
+offset_left = 828.0
+offset_top = 688.0
+offset_right = 1474.0
+offset_bottom = 915.0
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
+text = "VOTING"
+script = ExtResource("12_pvsap")
+
+[node name="VotingPage" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("12_01ptb")
+
+[node name="BackGround" type="ColorRect" parent="VotingPage"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.54902, 0.180392, 0.329412, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="DelegatesList" type="ScrollContainer" parent="VotingPage"]
+z_index = 3
+offset_left = 169.0
+offset_top = 93.0
+offset_right = 495.0
+offset_bottom = 511.0
+scale = Vector2(1.8, 1.8)
+
+[node name="GridContainer" type="GridContainer" parent="VotingPage/DelegatesList"]
+layout_mode = 2
+
+[node name="Texture" type="TextEdit" parent="VotingPage"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -631.0
+offset_top = 93.0
+offset_right = -305.0
+offset_bottom = 512.0
+grow_horizontal = 2
+scale = Vector2(1.8, 1.8)
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Delegates" type="TextEdit" parent="VotingPage"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -631.0
+offset_top = 31.0
+offset_right = -305.0
+offset_bottom = 62.0
+grow_horizontal = 2
+scale = Vector2(1.8, 1.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Delegates:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Favor" type="Button" parent="VotingPage"]
+offset_left = 944.0
+offset_top = 129.0
+offset_right = 1945.0
+offset_bottom = 356.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
+text = "FAVOR"
+
+[node name="Against" type="Button" parent="VotingPage"]
+offset_left = 946.0
+offset_top = 382.0
+offset_right = 1947.0
+offset_bottom = 609.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
+text = "AGAINST"
+
+[node name="Abstain" type="Button" parent="VotingPage"]
+offset_left = 946.0
+offset_top = 633.0
+offset_right = 1947.0
+offset_bottom = 860.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 120
+theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
+text = "ABSTAIN"
 
 [node name="Permanent" type="CanvasLayer" parent="."]
 layer = 5
@@ -760,4 +868,6 @@ theme_override_font_sizes/font_size = 70
 theme_override_styles/focus = SubResource("StyleBoxEmpty_urj2i")
 text = "OK"
 
+[connection signal="pressed" from="Session/VotingButton" to="Session/VotingButton" method="_on_pressed"]
+[connection signal="pressed" from="Session/VotingButton" to="VotingPage" method="_on_voting_button_pressed"]
 [connection signal="pressed" from="Permanent/WarningPanel/Button" to="Permanent/WarningPanel" method="_on_button_pressed"]

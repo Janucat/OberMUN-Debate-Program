@@ -36,9 +36,8 @@ func rightf():
 
 func set_warn(count):
 	warns = count
-	print(warns)
-	print(warn_count)
-	
+#	print(warns)
+#	print(warn_count)
 	
 #func _enter_tree():
 #	var icon_path = load("res://art/Flags/%s" % icon)
