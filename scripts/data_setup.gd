@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var session = $"../Session"
+@onready var voting_page = $"../VotingPage"
 
 var json_data = preload("res://json/data.json")
 
@@ -25,6 +26,7 @@ signal data_created
 func _ready():
 	show()
 	session.hide()
+	voting_page.hide()
 	
 	nations_data = json_data.data.get("nations")
 	

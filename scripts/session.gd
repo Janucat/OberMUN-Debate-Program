@@ -45,7 +45,6 @@ func start():
 		create_del(sel_nations.nations_selected[i], del_list_o)
 		del_list.append(sel_nations.nations_selected[i])
 		
-		
 func create_del(id, list_o):
 	var del = delegate_obj.instantiate()
 	del.id = id

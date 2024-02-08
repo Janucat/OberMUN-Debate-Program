@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2i2d5ww873in"]
+
+[ext_resource type="Script" path="res://delegate_vote_simple_object.gd" id="1_budsu"]
+
+[node name="delegate_vote_simple_object" type="Label"]
+offset_left = 45.0
+offset_top = 10.0
+offset_right = 197.0
+offset_bottom = 36.0
+text = "Africa"
+script = ExtResource("1_budsu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = -2.0
+offset_right = 200.0
+offset_bottom = 25.0

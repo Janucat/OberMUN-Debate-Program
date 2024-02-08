@@ -31,8 +31,7 @@ func leftf():
 func rightf():
 	right.emit(id)
 
-	
-	
+
 
 	
 
