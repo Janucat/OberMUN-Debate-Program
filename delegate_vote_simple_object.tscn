@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2i2d5ww873in"]
+[gd_scene load_steps=3 format=3 uid="uid://b2i2d5ww873in"]
 
 [ext_resource type="Script" path="res://delegate_vote_simple_object.gd" id="1_budsu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwgjd"]
 
 [node name="delegate_vote_simple_object" type="Label"]
 offset_left = 45.0
@@ -12,7 +14,17 @@ script = ExtResource("1_budsu")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 160.0
+offset_left = 147.0
 offset_top = -2.0
-offset_right = 200.0
-offset_bottom = 25.0
+offset_right = 191.0
+offset_bottom = 26.0
+expand_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_right = 244.0
+offset_bottom = 24.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uwgjd")
+
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
