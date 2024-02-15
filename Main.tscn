@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bi0i1nagrn1hf"]
+[gd_scene load_steps=26 format=3 uid="uid://bi0i1nagrn1hf"]
 
 [ext_resource type="Script" path="res://scripts/data_setup.gd" id="1_87lbl"]
 [ext_resource type="Texture2D" uid="uid://kvk8oiao20m4" path="res://art/icons/Obermun.png" id="1_js6lg"]
@@ -9,11 +9,13 @@
 [ext_resource type="Script" path="res://scripts/select_all_button.gd" id="4_t0tua"]
 [ext_resource type="Script" path="res://scripts/SelectSession.gd" id="5_lfhms"]
 [ext_resource type="Script" path="res://scripts/deselect_all_button.gd" id="6_5hk60"]
+[ext_resource type="Script" path="res://Exit.gd" id="9_jywtj"]
 [ext_resource type="Script" path="res://scripts/session.gd" id="10_pu1f3"]
 [ext_resource type="PackedScene" uid="uid://cha7cyhvt32do" path="res://Timer.tscn" id="11_0yosp"]
 [ext_resource type="Script" path="res://WarningPanel.gd" id="11_m7d3u"]
 [ext_resource type="Script" path="res://VotingPage.gd" id="12_01ptb"]
 [ext_resource type="Script" path="res://VotingButton.gd" id="12_pvsap"]
+[ext_resource type="Script" path="res://BackToMain.gd" id="14_37vql"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvyph"]
 
@@ -36,7 +38,6 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("1_87lbl")
 
 [node name="BackGround" type="ColorRect" parent="MainMenu"]
@@ -49,14 +50,17 @@ color = Color(0.54902, 0.180392, 0.329412, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Icon" type="TextureRect" parent="MainMenu"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -63.0
-offset_top = 45.0
-offset_right = 193.0
-offset_bottom = 301.0
+anchors_preset = -1
+anchor_left = 0.507
+anchor_top = 0.5
+anchor_right = 0.507
+anchor_bottom = 0.5
+offset_left = -94.139
+offset_top = -358.0
+offset_right = 281.861
+offset_bottom = 18.0
 grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_js6lg")
 metadata/_edit_use_anchors_ = true
@@ -64,13 +68,15 @@ metadata/_edit_use_anchors_ = true
 [node name="Title" type="TextEdit" parent="MainMenu"]
 anchors_preset = -1
 anchor_left = 0.5
-anchor_right = 0.603125
-anchor_bottom = 0.03
-offset_left = -242.0
-offset_top = 182.0
-offset_right = 90.0001
-offset_bottom = 222.0
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.5
+offset_top = -168.5
+offset_right = 286.5
+offset_bottom = -115.517
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
@@ -295,6 +301,23 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_p3mpu")
 text = "Start Session"
 script = ExtResource("4_stb0q")
 
+[node name="Exit" type="Button" parent="MainMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -539.0
+offset_top = 243.0
+offset_right = -217.0
+offset_bottom = 274.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p3mpu")
+text = "Exit"
+script = ExtResource("9_jywtj")
+
 [node name="Deselect All" type="Button" parent="MainMenu"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -314,6 +337,7 @@ script = ExtResource("6_5hk60")
 
 [node name="Session" type="CanvasLayer" parent="."]
 layer = 0
+visible = false
 script = ExtResource("10_pu1f3")
 
 [node name="BackGround" type="ColorRect" parent="Session"]
@@ -326,14 +350,17 @@ color = Color(0.54902, 0.180392, 0.329412, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Icon" type="TextureRect" parent="Session"]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -518.0
-offset_top = 100.0
-offset_right = -262.0
-offset_bottom = 356.0
+anchor_bottom = 0.5
+offset_left = -422.5
+offset_top = -305.5
+offset_right = -166.5
+offset_bottom = -49.5
 grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_js6lg")
 metadata/_edit_use_anchors_ = true
@@ -341,13 +368,15 @@ metadata/_edit_use_anchors_ = true
 [node name="Title" type="TextEdit" parent="Session"]
 anchors_preset = -1
 anchor_left = 0.5
-anchor_right = 0.603125
-anchor_bottom = 0.03
-offset_left = -697.0
-offset_top = 237.0
-offset_right = -365.0
-offset_bottom = 277.0
+anchor_top = 0.5
+anchor_right = 0.620552
+anchor_bottom = 0.518064
+offset_left = -598.5
+offset_top = -173.5
+offset_right = -266.5
+offset_bottom = -133.5
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
@@ -361,14 +390,17 @@ drag_and_drop_selection_enabled = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Delegates" type="TextEdit" parent="Session"]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -771.0
-offset_top = 306.0
-offset_right = -445.0
-offset_bottom = 337.0
+anchor_bottom = 0.5
+offset_left = -644.5
+offset_top = -102.0
+offset_right = -318.5
+offset_bottom = -71.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 0
@@ -377,16 +409,20 @@ editable = false
 context_menu_enabled = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
+metadata/_edit_use_anchors_ = true
 
 [node name="SpeakerList" type="TextEdit" parent="Session"]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -408.0
-offset_top = 306.0
-offset_right = -82.0
-offset_bottom = 337.0
+anchor_bottom = 0.5
+offset_left = -281.5
+offset_top = -102.0
+offset_right = 44.5
+offset_bottom = -71.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 0
@@ -395,12 +431,22 @@ editable = false
 context_menu_enabled = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
+metadata/_edit_use_anchors_ = true
 
 [node name="Labels" type="Control" parent="Session"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="PresidentLabel" type="TextEdit" parent="Session/Labels"]
 layout_direction = 3
@@ -408,10 +454,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -907.0
-offset_top = 33.0
-offset_right = -742.0
-offset_bottom = 64.0
+offset_left = -139.5
+offset_top = -338.5
+offset_right = 25.5
+offset_bottom = -307.5
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
@@ -428,10 +474,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -907.0
-offset_top = 70.0
-offset_right = -742.0
-offset_bottom = 101.0
+offset_left = -139.5
+offset_top = -301.5
+offset_right = 25.5
+offset_bottom = -270.5
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
@@ -448,10 +494,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -907.0
-offset_top = 106.0
-offset_right = -742.0
-offset_bottom = 137.0
+offset_left = -139.5
+offset_top = -265.5
+offset_right = 25.5
+offset_bottom = -234.5
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
@@ -468,10 +514,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -908.0
-offset_top = 155.0
-offset_right = -743.0
-offset_bottom = 186.0
+offset_left = -140.5
+offset_top = -216.5
+offset_right = 24.5
+offset_bottom = -185.5
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
@@ -488,10 +534,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -908.0
-offset_top = 192.0
-offset_right = -743.0
-offset_bottom = 223.0
+offset_left = -140.5
+offset_top = -179.5
+offset_right = 24.5
+offset_bottom = -148.5
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
@@ -508,10 +554,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -908.0
-offset_top = 228.0
-offset_right = -743.0
-offset_bottom = 259.0
+offset_left = -140.5
+offset_top = -143.5
+offset_right = 24.5
+offset_bottom = -112.5
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
@@ -524,19 +570,27 @@ drag_and_drop_selection_enabled = false
 
 [node name="Texts" type="Control" parent="Session"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="President" type="TextEdit" parent="Session/Texts"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 920.0
-offset_top = 33.0
-offset_right = 1420.0
-offset_bottom = 64.0
+offset_left = 146.5
+offset_top = -338.5
+offset_right = 646.5
+offset_bottom = -307.5
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
@@ -552,10 +606,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 920.0
-offset_top = 70.0
-offset_right = 1420.0
-offset_bottom = 101.0
+offset_left = 146.5
+offset_top = -301.5
+offset_right = 646.5
+offset_bottom = -270.5
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
@@ -571,10 +625,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 920.0
-offset_top = 106.0
-offset_right = 1420.0
-offset_bottom = 137.0
+offset_left = 146.5
+offset_top = -265.5
+offset_right = 646.5
+offset_bottom = -234.5
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
@@ -590,10 +644,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 919.0
-offset_top = 155.0
-offset_right = 1419.0
-offset_bottom = 186.0
+offset_left = 145.5
+offset_top = -216.5
+offset_right = 645.5
+offset_bottom = -185.5
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
@@ -609,10 +663,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 919.0
-offset_top = 192.0
-offset_right = 1419.0
-offset_bottom = 223.0
+offset_left = 145.5
+offset_top = -179.5
+offset_right = 645.5
+offset_bottom = -148.5
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
@@ -628,10 +682,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 919.0
-offset_top = 228.0
-offset_right = 1419.0
-offset_bottom = 338.0
+offset_left = 145.5
+offset_top = -143.5
+offset_right = 645.5
+offset_bottom = -33.5
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
@@ -644,14 +698,17 @@ drag_and_drop_selection_enabled = false
 wrap_mode = 1
 
 [node name="Texture" type="TextEdit" parent="Session"]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -771.0
-offset_top = 347.0
-offset_right = -445.0
-offset_bottom = 766.0
+anchor_bottom = 0.5
+offset_left = -645.0
+offset_top = -61.5
+offset_right = -319.0
+offset_bottom = 356.5
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 0
@@ -662,23 +719,33 @@ drag_and_drop_selection_enabled = false
 
 [node name="DelegatesList" type="ScrollContainer" parent="Session"]
 z_index = 3
-offset_left = 29.0
-offset_top = 347.0
-offset_right = 355.0
-offset_bottom = 765.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -643.0
+offset_top = -61.5
+offset_right = -320.0
+offset_bottom = 356.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="Session/DelegatesList"]
 layout_mode = 2
 
 [node name="Texture2" type="TextEdit" parent="Session"]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -408.0
-offset_top = 347.0
-offset_right = -82.0
-offset_bottom = 766.0
+anchor_bottom = 0.5
+offset_left = -279.5
+offset_top = -61.0
+offset_right = 44.5
+offset_bottom = 354.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 0
@@ -689,29 +756,46 @@ drag_and_drop_selection_enabled = false
 
 [node name="SpeakersList" type="ScrollContainer" parent="Session"]
 z_index = 3
-offset_left = 392.0
-offset_top = 347.0
-offset_right = 718.0
-offset_bottom = 765.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -63.5
+offset_right = 42.0
+offset_bottom = 354.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="Session/SpeakersList"]
 layout_mode = 2
 
 [node name="Timer" parent="Session" instance=ExtResource("11_0yosp")]
-offset_left = 1131.0
-offset_top = 626.0
-offset_right = 1431.0
-offset_bottom = 826.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 342.5
+offset_top = 166.5
+offset_right = 642.5
+offset_bottom = 366.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="SelectCommittee2" type="OptionButton" parent="Session"]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = 317.0
-offset_top = 582.0
-offset_right = 643.0
-offset_bottom = 613.0
+anchor_bottom = 0.5
+offset_left = 332.5
+offset_top = 124.5
+offset_right = 658.5
+offset_bottom = 155.5
 grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_cdk4x")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lcwv1")
@@ -726,10 +810,17 @@ popup/item_2/id = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="VotingButton" type="Button" parent="Session"]
-offset_left = 828.0
-offset_top = 688.0
-offset_right = 1474.0
-offset_bottom = 915.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 100.5
+offset_top = 210.5
+offset_right = 746.5
+offset_bottom = 437.5
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.3, 0.3)
 theme_override_font_sizes/font_size = 120
 theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
@@ -737,6 +828,7 @@ text = "VOTING"
 script = ExtResource("12_pvsap")
 
 [node name="VotingPage" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("12_01ptb")
 
 [node name="BackGround" type="ColorRect" parent="VotingPage"]
@@ -750,11 +842,18 @@ metadata/_edit_use_anchors_ = true
 
 [node name="DelegatesList" type="ScrollContainer" parent="VotingPage"]
 z_index = 3
-offset_left = 169.0
-offset_top = 93.0
-offset_right = 493.0
-offset_bottom = 510.0
-scale = Vector2(1.8, 1.8)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -557.5
+offset_top = -249.0
+offset_right = -233.5
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3, 1.3)
 
 [node name="GridContainer" type="GridContainer" parent="VotingPage/DelegatesList"]
 layout_mode = 2
@@ -762,21 +861,29 @@ layout_mode = 2
 [node name="Voting stuff" type="Control" parent="VotingPage"]
 visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Texture" type="TextEdit" parent="VotingPage/Voting stuff"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 149.0
-offset_top = 93.0
-offset_right = 475.0
-offset_bottom = 512.0
+offset_left = -560.5
+offset_top = -229.0
+offset_right = -234.5
+offset_bottom = 190.0
 grow_horizontal = 2
-scale = Vector2(1.8, 1.8)
+scale = Vector2(1.3, 1.3)
 mouse_filter = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
@@ -791,10 +898,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 149.0
-offset_top = 31.0
-offset_right = 475.0
-offset_bottom = 62.0
+offset_left = -560.5
+offset_top = -291.0
+offset_right = -323.5
+offset_bottom = -260.0
 grow_horizontal = 2
 scale = Vector2(1.8, 1.8)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -808,10 +915,10 @@ drag_and_drop_selection_enabled = false
 
 [node name="Favor" type="Button" parent="VotingPage/Voting stuff"]
 layout_mode = 0
-offset_left = 944.0
-offset_top = 129.0
-offset_right = 1945.0
-offset_bottom = 356.0
+offset_left = 86.5
+offset_top = -303.0
+offset_right = 1087.5
+offset_bottom = -76.0
 scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 120
 theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
@@ -819,10 +926,10 @@ text = "FAVOR"
 
 [node name="Against" type="Button" parent="VotingPage/Voting stuff"]
 layout_mode = 0
-offset_left = 946.0
-offset_top = 382.0
-offset_right = 1947.0
-offset_bottom = 609.0
+offset_left = 88.5
+offset_top = -168.0
+offset_right = 1089.5
+offset_bottom = 59.0
 scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 120
 theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
@@ -830,28 +937,54 @@ text = "AGAINST"
 
 [node name="Abstain" type="Button" parent="VotingPage/Voting stuff"]
 layout_mode = 0
-offset_left = 946.0
-offset_top = 633.0
-offset_right = 1947.0
-offset_bottom = 860.0
+offset_left = 90.5
+offset_top = -33.0
+offset_right = 1091.5
+offset_bottom = 194.0
 scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 120
 theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
 text = "ABSTAIN"
 
+[node name="BackToSession" type="Button" parent="VotingPage/Voting stuff"]
+layout_mode = 0
+offset_left = 236.5
+offset_top = 231.0
+offset_right = 634.5
+offset_bottom = 406.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
+text = "BACK"
+
 [node name="Result stuff" type="Control" parent="VotingPage"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="FavorList" type="ScrollContainer" parent="VotingPage/Result stuff"]
 z_index = 3
-layout_mode = 0
-offset_left = 80.0
-offset_top = 110.0
-offset_right = 295.0
-offset_bottom = 554.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -621.0
+offset_top = -257.0
+offset_right = -407.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1.6, 1.6)
 
 [node name="GridContainer" type="GridContainer" parent="VotingPage/Result stuff/FavorList"]
@@ -859,11 +992,18 @@ layout_mode = 2
 
 [node name="AgainstList" type="ScrollContainer" parent="VotingPage/Result stuff"]
 z_index = 3
-layout_mode = 0
-offset_left = 624.0
-offset_top = 110.0
-offset_right = 839.0
-offset_bottom = 554.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.5
+offset_top = -257.0
+offset_right = 46.5
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1.6, 1.6)
 
 [node name="GridContainer" type="GridContainer" parent="VotingPage/Result stuff/AgainstList"]
@@ -872,10 +1012,10 @@ layout_mode = 2
 [node name="AbstainList" type="ScrollContainer" parent="VotingPage/Result stuff"]
 z_index = 3
 layout_mode = 0
-offset_left = 1162.0
-offset_top = 110.0
-offset_right = 1377.0
-offset_bottom = 554.0
+offset_left = 307.5
+offset_top = -237.0
+offset_right = 521.5
+offset_bottom = 75.0
 scale = Vector2(1.6, 1.6)
 
 [node name="GridContainer" type="GridContainer" parent="VotingPage/Result stuff/AbstainList"]
@@ -886,10 +1026,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 56.0
-offset_top = 30.0
-offset_right = 252.0
-offset_bottom = 67.0
+offset_left = -628.0
+offset_top = -317.5
+offset_right = -432.0
+offset_bottom = -280.5
 grow_horizontal = 2
 scale = Vector2(1.8, 1.8)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -906,10 +1046,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 600.0
-offset_top = 30.0
-offset_right = 796.0
-offset_bottom = 67.0
+offset_left = -170.0
+offset_top = -317.5
+offset_right = 26.0001
+offset_bottom = -280.5
 grow_horizontal = 2
 scale = Vector2(1.8, 1.8)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -926,10 +1066,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 1138.0
-offset_top = 30.0
-offset_right = 1334.0
-offset_bottom = 67.0
+offset_left = 282.0
+offset_top = -317.5
+offset_right = 478.0
+offset_bottom = -280.5
 grow_horizontal = 2
 scale = Vector2(1.8, 1.8)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -941,6 +1081,18 @@ context_menu_enabled = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
 
+[node name="BackToMain" type="Button" parent="VotingPage/Result stuff"]
+layout_mode = 0
+offset_left = -91.5
+offset_top = 266.5
+offset_right = 306.5
+offset_bottom = 441.5
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
+text = "BACK"
+script = ExtResource("14_37vql")
+
 [node name="Permanent" type="CanvasLayer" parent="."]
 layer = 5
 
@@ -951,10 +1103,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 286.0
-offset_top = 172.0
-offset_right = 683.0
-offset_bottom = 380.0
+offset_left = 311.5
+offset_top = 158.5
+offset_right = 681.5
+offset_bottom = 377.5
 grow_horizontal = 2
 grow_vertical = 2
 auto_translate = false
@@ -981,9 +1133,12 @@ theme_override_font_sizes/font_size = 70
 theme_override_styles/focus = SubResource("StyleBoxEmpty_urj2i")
 text = "OK"
 
+[connection signal="pressed" from="MainMenu/Exit" to="MainMenu/Exit" method="_on_pressed"]
 [connection signal="pressed" from="Session/VotingButton" to="Session/VotingButton" method="_on_pressed"]
 [connection signal="pressed" from="Session/VotingButton" to="VotingPage" method="_on_voting_button_pressed"]
 [connection signal="pressed" from="VotingPage/Voting stuff/Favor" to="VotingPage" method="_on_favor_pressed"]
 [connection signal="pressed" from="VotingPage/Voting stuff/Against" to="VotingPage" method="_on_against_pressed"]
 [connection signal="pressed" from="VotingPage/Voting stuff/Abstain" to="VotingPage" method="_on_abstain_pressed"]
+[connection signal="pressed" from="VotingPage/Voting stuff/BackToSession" to="VotingPage" method="_on_back_to_session_pressed"]
+[connection signal="pressed" from="VotingPage/Result stuff/BackToMain" to="VotingPage/Result stuff/BackToMain" method="_on_pressed"]
 [connection signal="pressed" from="Permanent/WarningPanel/Button" to="Permanent/WarningPanel" method="_on_button_pressed"]

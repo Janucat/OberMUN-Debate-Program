@@ -5,11 +5,13 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwgjd"]
 
 [node name="delegate_vote_simple_object" type="Label"]
-offset_left = 45.0
+offset_left = 46.0
 offset_top = 10.0
 offset_right = 197.0
 offset_bottom = 36.0
+theme_override_constants/shadow_outline_size = 0
 text = "Africa"
+horizontal_alignment = 1
 script = ExtResource("1_budsu")
 
 [node name="TextureRect" type="TextureRect" parent="."]

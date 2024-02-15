@@ -1,5 +1,9 @@
 extends CanvasLayer
 
+@onready var favor_title = $"Result stuff/Favor_title"
+@onready var against_title = $"Result stuff/Against_title"
+@onready var abstain_title = $"Result stuff/Abstain_title"
+
 @onready var main = $"../MainMenu"
 
 @onready var session = $"../Session"
@@ -23,6 +27,8 @@ var selected_del = []
 var favor_del = []
 var against_del = []
 var abstain_del = []
+
+var total_del
 
 func _ready():
 	delegates_list.show()
@@ -49,10 +55,9 @@ func del_checked(del, value):
 
 
 func _on_voting_button_pressed():
-
 	for i in sel_nations.nations_selected.size():
 		create_del(sel_nations.nations_selected[i], del_list_o, true)
-
+	total_del = del_list_o.get_child_count()
 
 func _on_favor_pressed():
 	favor_del.append_array(selected_del)
@@ -83,9 +88,25 @@ func clean_children_and_lists():
 		delegates_list.hide()
 		voting_stuff.hide()
 		result_stuff.show()
+		
+		
 		for i in favor_del.size():
 			create_del(favor_del[i].id, favor_list, false)
 		for i in against_del.size():
 			create_del(against_del[i].id, against_list, false)
 		for i in abstain_del.size():
 			create_del(abstain_del[i].id, abstain_list, false)
+
+		against_title.text = "Against: " + str((against_del.size()*100) / total_del) + " % (" + str(against_del.size()) + ")"
+		abstain_title.text = "Abstain: " + str((abstain_del.size()*100) / total_del) + " % (" + str(abstain_del.size()) + ")"
+		favor_title.text = "Favor: " + str((favor_del.size()*100) / total_del) + " % (" + str(favor_del.size()) + ")"
+	
+
+func _on_back_to_session_pressed():
+	favor_del.clear()
+	against_del.clear()
+	abstain_del.clear()
+	for i in del_list_o.get_child_count():
+		del_list_o.remove_child(del_list_o.get_children()[0])
+	self.hide()
+	session.show()
