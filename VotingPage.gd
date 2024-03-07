@@ -148,6 +148,7 @@ func clean_children_and_lists():
 			voting_button.text = "Results"
 
 func _on_back_to_session_pressed():
+	selected_del.clear()
 	favor_del.clear()
 	against_del.clear()
 	abstain_del.clear()
