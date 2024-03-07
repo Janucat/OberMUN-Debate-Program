@@ -44,9 +44,15 @@ var favor_del = []
 var against_del = []
 var abstain_del = []
 
+var results = [[], [], []]
+
 var total_del
 
 var numberOfVotation
+
+var makerecord_state = false
+
+signal makerecord
 
 func _ready():
 	numberOfVotation = 0
@@ -78,6 +84,7 @@ func _on_voting_button_pressed():
 	if numberOfVotation == 3:
 		voting_stuff.hide()
 		final_results.show()
+		sendresults()
 	else:
 		for i in sel_nations.nations_selected.size():
 			create_del(sel_nations.nations_selected[i], del_list_o, true)
@@ -129,7 +136,7 @@ func clean_children_and_lists():
 		abstain_title.text = "Abstain: " + str((abstain_del.size()*100) / total_del) + " % (" + str(abstain_del.size()) + ")"
 		favor_title.text = "Favor: " + str((favor_del.size()*100) / total_del) + " % (" + str(favor_del.size()) + ")"
 		
-		#addtoresults(numberOfVotation)
+		addtoresults()
 		
 		if numberOfVotation == 1:
 			against_title1.text = against_title.text
@@ -164,3 +171,13 @@ func _on_back_to_session_pressed():
 func remove_children(object):
 	for i in object.get_child_count():
 		object.remove_child(object.get_children()[0])
+
+func addtoresults():
+	results[numberOfVotation - 1].append(against_title.text)
+	results[numberOfVotation - 1].append(abstain_title.text)
+	results[numberOfVotation - 1].append(favor_title.text)
+
+func sendresults():
+	if !makerecord_state:
+		makerecord_state = !makerecord_state
+		makerecord.emit(results)
