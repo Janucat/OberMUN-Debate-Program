@@ -2,37 +2,63 @@
 	"sessions": 6,
 	"committees": [
 		{
-			"committee": "CSW",
+			"committee": "UNODC",
 			"topics": [
-				"Debating about the famous quote: \"We live in a society\"",
-				"Ensuring gender equality through the improvement  of girls’ access to education in rural countries in order to enable equal opportunities",
-				"Empowering women’s rights by guaranteeing free choice on abortion",
-				"Discussing Cicciogamer89's effect on italian demographics"
+				"Enforcing a National Prevention Strategy for children under the minimum age of criminal responsibility risking involvement in criminal activities.",
+				"Integrating different cultural, political and economic realities into society to avoid the onset of episodes of public disturbance in urban areas."
 			],
-			"president": "Tranchitella Greta",
-			"vice": "Zecchini Alice",
+			"president": "Albino Tommaso",
+			"vice": "Piccini Martina",
+			"mod": ""
+		},
+		{
+			"committee": "UNEP",
+			"topics": [
+				"Prevention of natural disasters in order to minimize climate migration.",
+				"Developing innovative technologies to prevent marine pollution, promoting cooperation amongst nations in this field and consequent creation of new job opportunities."
+			],
+			"president": "Fumich Veronica",
+			"vice": "Korosec Luna",
 			"mod": ""
 		},
 		{
 			"committee": "ECOSOC",
 			"topics": [
-				"Decriminalisation and legalisation of soft drug sale for recreational use",
-				"Resolving local contrast in Giardino Basevi between two drug addicts",
-				"Ensuring relationships between youth and institutions in order to create job opportunities for younger generations"
+				"Stimulating international cooperation to prevent Brain Drain creating suitable job opportunities in the country of origin in order to preserve national identity.",
+				"Enhancing measures to prevent child slavery and forced labor in developing countries."
 			],
-			"president": "Longo Giulia",
-			"vice": "Lasorte Francesca",
+			"president": "Gallushi Nensi",
+			"vice": "Cossina Luca",
 			"mod": ""
 		},
 		{
-			"committee": "OHCHR",
+			"committee": "FAO",
 			"topics": [
-				"Safeguarding LGBTQ+ parenting and step-child adoption by single and same sex couple",
-				"The effect and impact the Covid-19 pandemic had on mental health",
-				"Advanced memetics and it's application to human society"
+				"Reducing Factory Farming, analyzing and keeping under control synthetic food production.",
+				"Ensure access to safe and nutritious food for civilians in conflict-affected areas."
 			],
-			"president": "Zane Francesca",
-			"vice": "Tranchitella Sophia",
+			"president": "Di Maio Maria Grazia",
+			"vice": "Ivancic Greta",
+			"mod": ""
+		},
+		{
+			"committee": "UNOOSA",
+			"topics": [
+				"Avoiding unethical space colonization and creating a regulation to reduce consequent space pollution.",
+				"Ensuring that International Space Programme remains unaffected by international tensions."
+			],
+			"president": "Alfieri Caterina",
+			"vice": "Devescovi Anja",
+			"mod": ""
+		},
+		{
+			"committee": "DISEC",
+			"topics": [
+				"Implementation of Ottawa Treaty on the prohibition of use, stockpiling, production and transfer of anti-personnel mines.",
+				"Implementation of measures to regulate the role of social media in fueling conflicts in order to prevent fake news propaganda."
+			],
+			"president": "Valentinis Alessandro",
+			"vice": "Coli Eleonora",
 			"mod": ""
 		}
 	],
