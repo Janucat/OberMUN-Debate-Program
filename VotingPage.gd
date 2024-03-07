@@ -21,6 +21,22 @@ extends CanvasLayer
 @onready var against_list = $"Result stuff/AgainstList/GridContainer"
 @onready var abstain_list = $"Result stuff/AbstainList/GridContainer"
 
+@onready var final_results = $"Final Results"
+
+@onready var favor_title1 = $"Final Results/First votation/Favor_title"
+@onready var against_title1 = $"Final Results/First votation/Against_title"
+@onready var abstain_title1 = $"Final Results/First votation/Abstain_title"
+
+@onready var favor_title2 = $"Final Results/Second votation/Favor_title"
+@onready var against_title2 = $"Final Results/Second votation/Against_title"
+@onready var abstain_title2 = $"Final Results/Second votation/Abstain_title"
+
+@onready var favor_title3 = $"Final Results/Third votation/Favor_title"
+@onready var against_title3 = $"Final Results/Third votation/Against_title"
+@onready var abstain_title3 = $"Final Results/Third votation/Abstain_title"
+
+@onready var voting_button = $"../Session/VotingButton"
+
 var delegate_obj = preload("res://delegate_vote_simple_object.tscn")
 
 var selected_del = []
@@ -30,10 +46,14 @@ var abstain_del = []
 
 var total_del
 
+var numberOfVotation
+
 func _ready():
+	numberOfVotation = 0
 	delegates_list.show()
 	voting_stuff.show()
 	result_stuff.hide()
+	final_results.hide()
 
 func create_del(id, list_o, isCheck):
 	var del = delegate_obj.instantiate()
@@ -55,9 +75,14 @@ func del_checked(del, value):
 
 
 func _on_voting_button_pressed():
-	for i in sel_nations.nations_selected.size():
-		create_del(sel_nations.nations_selected[i], del_list_o, true)
-	total_del = del_list_o.get_child_count()
+	if numberOfVotation == 3:
+		voting_stuff.hide()
+		final_results.show()
+	else:
+		for i in sel_nations.nations_selected.size():
+			create_del(sel_nations.nations_selected[i], del_list_o, true)
+		total_del = del_list_o.get_child_count()
+	
 
 func _on_favor_pressed():
 	favor_del.append_array(selected_del)
@@ -85,7 +110,10 @@ func clean_children_and_lists():
 			del_list_o.remove_child(current_object)
 	selected_del.clear()
 	if del_list_o.get_children().is_empty():
-		delegates_list.hide()
+		if numberOfVotation != 3:
+			numberOfVotation += 1
+		print(numberOfVotation)
+#		delegates_list.hide()
 		voting_stuff.hide()
 		result_stuff.show()
 		
@@ -100,13 +128,38 @@ func clean_children_and_lists():
 		against_title.text = "Against: " + str((against_del.size()*100) / total_del) + " % (" + str(against_del.size()) + ")"
 		abstain_title.text = "Abstain: " + str((abstain_del.size()*100) / total_del) + " % (" + str(abstain_del.size()) + ")"
 		favor_title.text = "Favor: " + str((favor_del.size()*100) / total_del) + " % (" + str(favor_del.size()) + ")"
-	
+		
+		#addtoresults(numberOfVotation)
+		
+		if numberOfVotation == 1:
+			against_title1.text = against_title.text
+			abstain_title1.text = abstain_title.text
+			favor_title1.text = favor_title.text
+			voting_button.text = "Voting 2/3"
+		if numberOfVotation == 2:
+			against_title2.text = against_title.text
+			abstain_title2.text = abstain_title.text
+			favor_title2.text = favor_title.text
+			voting_button.text = "Voting 3/3"
+		if numberOfVotation == 3:
+			against_title3.text = against_title.text
+			abstain_title3.text = abstain_title.text
+			favor_title3.text = favor_title.text
+			voting_button.text = "Results"
 
 func _on_back_to_session_pressed():
 	favor_del.clear()
 	against_del.clear()
 	abstain_del.clear()
-	for i in del_list_o.get_child_count():
-		del_list_o.remove_child(del_list_o.get_children()[0])
+	remove_children(del_list_o)
+	remove_children(favor_list)
+	remove_children(against_list)
+	remove_children(abstain_list)
+	result_stuff.hide()
+	voting_stuff.show()
 	self.hide()
 	session.show()
+	
+func remove_children(object):
+	for i in object.get_child_count():
+		object.remove_child(object.get_children()[0])
