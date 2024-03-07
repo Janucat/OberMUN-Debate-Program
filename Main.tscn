@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bi0i1nagrn1hf"]
+[gd_scene load_steps=27 format=3 uid="uid://bi0i1nagrn1hf"]
 
 [ext_resource type="Script" path="res://scripts/data_setup.gd" id="1_87lbl"]
 [ext_resource type="Texture2D" uid="uid://kvk8oiao20m4" path="res://art/icons/Obermun.png" id="1_js6lg"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://VotingPage.gd" id="12_01ptb"]
 [ext_resource type="Script" path="res://VotingButton.gd" id="12_pvsap"]
 [ext_resource type="Script" path="res://BackToMain.gd" id="14_37vql"]
+[ext_resource type="Script" path="res://scripts/records_management.gd" id="17_28gxp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvyph"]
 
@@ -38,7 +39,6 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("1_87lbl")
 
 [node name="BackGround" type="ColorRect" parent="MainMenu"]
@@ -338,6 +338,7 @@ script = ExtResource("6_5hk60")
 
 [node name="Session" type="CanvasLayer" parent="."]
 layer = 0
+visible = false
 script = ExtResource("10_pu1f3")
 
 [node name="BackGround" type="ColorRect" parent="Session"]
@@ -1454,6 +1455,8 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_urj2i")
 text = "OK"
 
 [node name="Management" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("17_28gxp")
 
 [node name="BackGround" type="ColorRect" parent="Management"]
 anchors_preset = 15
