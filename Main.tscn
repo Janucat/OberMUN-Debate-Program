@@ -29,15 +29,16 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3mpu"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lcwv1"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03vp1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lcwv1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_urj2i"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("1_87lbl")
 
 [node name="BackGround" type="ColorRect" parent="MainMenu"]
@@ -66,7 +67,7 @@ texture = ExtResource("1_js6lg")
 metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="TextEdit" parent="MainMenu"]
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -337,7 +338,6 @@ script = ExtResource("6_5hk60")
 
 [node name="Session" type="CanvasLayer" parent="."]
 layer = 0
-visible = false
 script = ExtResource("10_pu1f3")
 
 [node name="BackGround" type="ColorRect" parent="Session"]
@@ -348,6 +348,24 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.54902, 0.180392, 0.329412, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="BackToMain" type="Button" parent="Session"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 74.5
+offset_top = 288.0
+offset_right = 556.5
+offset_bottom = 406.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
+text = "BACK TO MAIN MENU"
+script = ExtResource("14_37vql")
 
 [node name="Icon" type="TextureRect" parent="Session"]
 anchors_preset = 8
@@ -815,16 +833,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 100.5
-offset_top = 210.5
-offset_right = 746.5
-offset_bottom = 437.5
+offset_left = 369.5
+offset_top = 8.0
+offset_right = 1107.5
+offset_bottom = 235.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.3, 0.3)
 theme_override_font_sizes/font_size = 120
 theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
-text = "VOTING"
+text = "VOTING 1/3"
 script = ExtResource("12_pvsap")
 
 [node name="VotingPage" type="CanvasLayer" parent="."]
@@ -958,6 +976,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
 text = "BACK"
 
 [node name="Result stuff" type="Control" parent="VotingPage"]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -1081,16 +1100,317 @@ context_menu_enabled = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="BackToMain" type="Button" parent="VotingPage/Result stuff"]
+[node name="BackToSession" type="Button" parent="VotingPage/Result stuff"]
 layout_mode = 0
-offset_left = -91.5
-offset_top = 266.5
-offset_right = 306.5
-offset_bottom = 441.5
+offset_left = -98.5
+offset_top = 271.0
+offset_right = 299.5
+offset_bottom = 446.0
 scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
 text = "BACK"
+
+[node name="Final Results" type="Control" parent="VotingPage"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="First votation" type="Control" parent="VotingPage/Final Results"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Favor_title" type="TextEdit" parent="VotingPage/Final Results/First votation"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -628.0
+offset_top = -252.5
+offset_right = -432.0
+offset_bottom = -215.5
+grow_horizontal = 2
+scale = Vector2(1.8, 1.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Favor:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="text" type="TextEdit" parent="VotingPage/Final Results/First votation"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = -331.0
+offset_right = 23.0
+offset_bottom = -299.0
+grow_horizontal = 2
+scale = Vector2(1.8, 1.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "First Votation results:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="text2" type="TextEdit" parent="VotingPage/Final Results/First votation"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -182.0
+offset_top = -143.0
+offset_right = 24.0
+offset_bottom = -111.0
+grow_horizontal = 2
+scale = Vector2(1.8, 1.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Second Votation results:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="text3" type="TextEdit" parent="VotingPage/Final Results/First votation"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -164.0
+offset_top = 48.0
+offset_right = 25.0
+offset_bottom = 80.0
+grow_horizontal = 2
+scale = Vector2(1.8, 1.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Third Votation results:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Against_title" type="TextEdit" parent="VotingPage/Final Results/First votation"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.0
+offset_top = -252.5
+offset_right = 26.0001
+offset_bottom = -215.5
+grow_horizontal = 2
+scale = Vector2(1.8, 1.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Against:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Abstain_title" type="TextEdit" parent="VotingPage/Final Results/First votation"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 282.0
+offset_top = -252.5
+offset_right = 478.0
+offset_bottom = -215.5
+grow_horizontal = 2
+scale = Vector2(1.8, 1.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Abstain:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Second votation" type="Control" parent="VotingPage/Final Results"]
+anchors_preset = 0
+offset_top = 180.0
+offset_right = 40.0
+offset_bottom = 220.0
+
+[node name="Favor_title" type="TextEdit" parent="VotingPage/Final Results/Second votation"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -628.0
+offset_top = -240.5
+offset_right = -432.0
+offset_bottom = -203.5
+grow_horizontal = 2
+scale = Vector2(1.8, 1.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Favor:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Against_title" type="TextEdit" parent="VotingPage/Final Results/Second votation"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.0
+offset_top = -240.5
+offset_right = 26.0001
+offset_bottom = -203.5
+grow_horizontal = 2
+scale = Vector2(1.8, 1.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Against:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Abstain_title" type="TextEdit" parent="VotingPage/Final Results/Second votation"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 282.0
+offset_top = -240.5
+offset_right = 478.0
+offset_bottom = -203.5
+grow_horizontal = 2
+scale = Vector2(1.8, 1.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Abstain:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Third votation" type="Control" parent="VotingPage/Final Results"]
+anchors_preset = 0
+offset_top = 360.0
+offset_right = 40.0
+offset_bottom = 400.0
+
+[node name="Favor_title" type="TextEdit" parent="VotingPage/Final Results/Third votation"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -628.0
+offset_top = -230.5
+offset_right = -432.0
+offset_bottom = -193.5
+grow_horizontal = 2
+scale = Vector2(1.8, 1.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Favor:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Against_title" type="TextEdit" parent="VotingPage/Final Results/Third votation"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.0
+offset_top = -230.5
+offset_right = 26.0001
+offset_bottom = -193.5
+grow_horizontal = 2
+scale = Vector2(1.8, 1.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Against:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Abstain_title" type="TextEdit" parent="VotingPage/Final Results/Third votation"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 282.0
+offset_top = -230.5
+offset_right = 478.0
+offset_bottom = -193.5
+grow_horizontal = 2
+scale = Vector2(1.8, 1.8)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+text = "Abstain:"
+editable = false
+context_menu_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="BackToSession2" type="Button" parent="VotingPage/Final Results"]
+layout_mode = 0
+offset_left = -606.5
+offset_top = 271.0
+offset_right = 164.5
+offset_bottom = 446.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
+text = "BACK TO SESSION"
+
+[node name="BackToMain2" type="Button" parent="VotingPage/Final Results"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 181.5
+offset_top = 251.0
+offset_right = 1095.5
+offset_bottom = 423.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
+text = "BACK TO MAIN MENU"
 script = ExtResource("14_37vql")
 
 [node name="Permanent" type="CanvasLayer" parent="."]
@@ -1134,11 +1454,14 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_urj2i")
 text = "OK"
 
 [connection signal="pressed" from="MainMenu/Exit" to="MainMenu/Exit" method="_on_pressed"]
+[connection signal="pressed" from="Session/BackToMain" to="Session/BackToMain" method="_on_pressed"]
 [connection signal="pressed" from="Session/VotingButton" to="Session/VotingButton" method="_on_pressed"]
 [connection signal="pressed" from="Session/VotingButton" to="VotingPage" method="_on_voting_button_pressed"]
 [connection signal="pressed" from="VotingPage/Voting stuff/Favor" to="VotingPage" method="_on_favor_pressed"]
 [connection signal="pressed" from="VotingPage/Voting stuff/Against" to="VotingPage" method="_on_against_pressed"]
 [connection signal="pressed" from="VotingPage/Voting stuff/Abstain" to="VotingPage" method="_on_abstain_pressed"]
 [connection signal="pressed" from="VotingPage/Voting stuff/BackToSession" to="VotingPage" method="_on_back_to_session_pressed"]
-[connection signal="pressed" from="VotingPage/Result stuff/BackToMain" to="VotingPage/Result stuff/BackToMain" method="_on_pressed"]
+[connection signal="pressed" from="VotingPage/Result stuff/BackToSession" to="VotingPage" method="_on_back_to_session_pressed"]
+[connection signal="pressed" from="VotingPage/Final Results/BackToSession2" to="VotingPage" method="_on_back_to_session_pressed"]
+[connection signal="pressed" from="VotingPage/Final Results/BackToMain2" to="VotingPage/Final Results/BackToMain2" method="_on_pressed"]
 [connection signal="pressed" from="Permanent/WarningPanel/Button" to="Permanent/WarningPanel" method="_on_button_pressed"]
