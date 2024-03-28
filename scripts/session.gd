@@ -34,12 +34,13 @@ func _process(delta):
 	pass
 
 func start():
-	president.text = main.comm_pres.get(sel_comm.committee)
-	vice.text = main.comm_vice.get(sel_comm.committee)
-	moderator.text = main.comm_mod.get(sel_comm.committee)
-	committee.text = sel_comm.committee
-	topic.text = sel_topic.topic
-	session.text = str(sel_session.session)
+	if(main.comm_pres.get(sel_comm.committee) != null):
+		president.text = main.comm_pres.get(sel_comm.committee)
+		vice.text = main.comm_vice.get(sel_comm.committee)
+		moderator.text = main.comm_mod.get(sel_comm.committee)
+		committee.text = sel_comm.committee
+		topic.text = sel_topic.topic
+		session.text = str(sel_session.session)
 	
 	for i in sel_nations.nations_selected.size():
 		create_del(sel_nations.nations_selected[i], del_list_o)

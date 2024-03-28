@@ -69,19 +69,9 @@
 			"image": "ARG.png"
 		},
 		{
-			"id": "afghanistan",
-			"name": "Afghanistan",
-			"image": "AFG.png"
-		},
-		{
 			"id": "australia",
 			"name": "Australia",
 			"image": "AUS.png"
-		},
-		{
-			"id": "bulgaria",
-			"name": "Bulgaria",
-			"image": "BGR.png"
 		},
 		{
 			"id": "brasil",
@@ -94,9 +84,9 @@
 			"image": "CAN.png"
 		},
 		{
-			"id": "china",
-			"name": "China",
-			"image": "CHN.png"
+			"id": "centralafricanrepublic",
+			"name": "Central African Republic",
+			"image": "CAR.png"
 		},
 		{
 			"id": "colombia",
@@ -104,14 +94,14 @@
 			"image": "COL.png"
 		},
 		{
-			"id": "germany",
-			"name": "Germany",
-			"image": "DEU.png"
+			"id": "democraticrepublicofkorea",
+			"name": "Democratic People’s Republic of Korea",
+			"image": "PRK.png"
 		},
 		{
-			"id": "denmark",
-			"name": "Denmark",
-			"image": "DNK.png"
+			"id": "democraticrepublicofthecongo",
+			"name": "Democratic Republic of the Congo",
+			"image": "COD.png"
 		},
 		{
 			"id": "egypt",
@@ -119,19 +109,154 @@
 			"image": "EGY.png"
 		},
 		{
+			"id": "france",
+			"name": "France",
+			"image": "FRA.png"
+		},
+		{
+			"id": "germany",
+			"name": "Germany",
+			"image": "DEU.png"
+		},
+		{
+			"id": "ghana",
+			"name": "Ghana",
+			"image": "GHA.png"
+		},
+		{
+			"id": "hungary",
+			"name": "Hungary",
+			"image": "HUN.png"
+		},
+		{
+			"id": "india",
+			"name": "India",
+			"image": "IND.png"
+		},
+		{
+			"id": "indonesia",
+			"name": "Indonesia",
+			"image": "IDN.png"
+		},
+		{
+			"id": "islamicrepublicofiran",
+			"name": "Islamic Republic of Iran",
+			"image": "IRI.png"
+		},
+		{
+			"id": "israel",
+			"name": "Israel",
+			"image": "ISR.png"
+		},
+		{
+			"id": "italy",
+			"name": "Italy",
+			"image": "ITA.png"
+		},
+		{
+			"id": "japan",
+			"name": "Japan",
+			"image": "JPN.png"
+		},
+		{
+			"id": "libya",
+			"name": "Lybia",
+			"image": "LBY.png"
+		},
+		{
+			"id": "mexico",
+			"name": "Mexico",
+			"image": "MEX.png"
+		},
+		{
+			"id": "morocco",
+			"name": "Morocco",
+			"image": "MAR.png"
+		},
+		{
+			"id": "newzealand",
+			"name": "New Zealand",
+			"image": "NZL.png"
+		},
+		{
+			"id": "nigeria",
+			"name": "Nigeria",
+			"image": "NGA.png"
+		},
+		{
+			"id": "norway",
+			"name": "Norway",
+			"image": "NOR.png"
+		},
+		{
+			"id": "pakistan",
+			"name": "Pakistan",
+			"image": "PAK.png"
+		},
+		{
+			"id": "china",
+			"name": "People’s Republic of China",
+			"image": "CHN.png"
+		},
+		{
+			"id": "portugal",
+			"name": "Portugal",
+			"image": "PORT.png"
+		},
+		{
+			"id": "republicofkorea",
+			"name": "Republic of Korea",
+			"image": "KOR.png"
+		},
+		{
+			"id": "romania",
+			"name": "Romania",
+			"image": "ROU.png"
+		},
+		{
+			"id": "russianfederation",
+			"name": "Russian Federation",
+			"image": "RUS.png"
+		},
+		{
+			"id": "saudiarabia",
+			"name": "SaudiArabia",
+			"image": "SAU.png"
+		},
+		{
+			"id": "southafrica",
+			"name": "South Africa",
+			"image": "ZAF.png"
+		},
+		{
 			"id": "spain",
 			"name": "Spain",
 			"image": "ESP.png"
 		},
 		{
-			"id": "finland",
-			"name": "Finland",
-			"image": "FNL.png"
+			"id": "sweden",
+			"name": "Sweden",
+			"image": "SWE.png"
 		},
 		{
-			"id": "france",
-			"name": "France",
-			"image": "FRA.png"
+			"id": "syrianarabrepublic",
+			"name": "Syrian Arab Republic",
+			"image": "SYR.png"
+		},
+		{
+			"id": "thailand",
+			"name": "Thailand",
+			"image": "KOR.png"
+		},
+		{
+			"id": "turkey",
+			"name": "Turney",
+			"image": "TUR.png"
+		},
+		{
+			"id": "unitedarabemirates",
+			"name": "United Arab Emirates",
+			"image": "ARE.png"
 		},
 		{
 			"id": "unitedkingdom",
@@ -139,9 +264,9 @@
 			"image": "GBR.png"
 		},
 		{
-			"id": "greece",
-			"name": "Greece",
-			"image": "GRC.png"
+			"id": "unitedstatesofamerica",
+			"name": "United States of America",
+			"image": "USA.png"
 		}
 	]
 }

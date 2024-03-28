@@ -6,6 +6,7 @@ extends Button
 @onready var session_button = $"../SelectionButtons/SelectSession"
 @onready var main_menu = $".."
 @onready var session = $"../../Session"
+@onready var sel_comm = $"../SelectionButtons/SelectCommittee"
 
 
 signal start_session
@@ -18,7 +19,8 @@ func _process(delta):
 	pass
 
 func start_session_func():
-	main_menu.hide()
-	session.show()
-	start_session.emit()
+	if(main_menu.comm_pres.get(sel_comm.committee) != null):
+		main_menu.hide()
+		session.show()
+		start_session.emit()
 	
