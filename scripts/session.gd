@@ -50,7 +50,7 @@ func create_del(id, list_o):
 	var del = delegate_obj.instantiate()
 	del.id = id
 	del.icon = main.nations_image.get(id)
-	del.text = main.nations_name.get(id)
+	del.get_child(5).text = main.nations_name.get(id)
 	del.get_child(4).text = str(main.nations_warn.get(id))
 	del.get_child(2).texture = load(file_path % main.nations_image.get(id))
 	del.left.connect(leftf)
