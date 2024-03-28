@@ -69,19 +69,9 @@
 			"image": "ARG.png"
 		},
 		{
-			"id": "afghanistan",
-			"name": "Afghanistan",
-			"image": "AFG.png"
-		},
-		{
 			"id": "australia",
 			"name": "Australia",
 			"image": "AUS.png"
-		},
-		{
-			"id": "bulgaria",
-			"name": "Bulgaria",
-			"image": "BGR.png"
 		},
 		{
 			"id": "brasil",
