@@ -39,6 +39,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("1_87lbl")
 
 [node name="BackGround" type="ColorRect" parent="MainMenu"]
@@ -1469,13 +1470,13 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="TextEdit" parent="Management"]
 anchors_preset = -1
-anchor_left = 0.486
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.486
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -285.222
+offset_left = -304.5
 offset_top = -368.0
-offset_right = 284.778
+offset_right = 265.5
 offset_bottom = -256.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1497,9 +1498,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -612.5
+offset_left = -633.5
 offset_top = -168.0
-offset_right = -179.5
+offset_right = -200.5
 offset_bottom = -120.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1510,9 +1511,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -162.5
+offset_left = -183.5
 offset_top = -168.0
-offset_right = 658.5
+offset_right = 637.5
 offset_bottom = 355.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1523,9 +1524,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -613.5
+offset_left = -634.5
 offset_top = -213.0
-offset_right = -327.5
+offset_right = -348.5
 offset_bottom = -174.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1538,9 +1539,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -162.5
+offset_left = -183.5
 offset_top = -213.0
-offset_right = 123.5
+offset_right = 102.5
 offset_bottom = -174.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1553,9 +1554,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -609.5
+offset_left = -630.5
 offset_top = -101.0
-offset_right = -179.5
+offset_right = -200.5
 offset_bottom = 356.0
 grow_horizontal = 2
 grow_vertical = 2
