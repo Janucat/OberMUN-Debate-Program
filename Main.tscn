@@ -41,6 +41,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("1_87lbl")
 
 [node name="BackGround" type="ColorRect" parent="MainMenu"]
@@ -863,7 +864,6 @@ text = "VOTING 1/3"
 script = ExtResource("12_pvsap")
 
 [node name="VotingPage" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("12_01ptb")
 
 [node name="BackGround" type="ColorRect" parent="VotingPage"]
