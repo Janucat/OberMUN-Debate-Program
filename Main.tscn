@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bi0i1nagrn1hf"]
+[gd_scene load_steps=29 format=3 uid="uid://bi0i1nagrn1hf"]
 
 [ext_resource type="Script" path="res://scripts/data_setup.gd" id="1_87lbl"]
 [ext_resource type="Texture2D" uid="uid://kvk8oiao20m4" path="res://art/icons/Obermun.png" id="1_js6lg"]
@@ -17,6 +17,8 @@
 [ext_resource type="Script" path="res://VotingButton.gd" id="12_pvsap"]
 [ext_resource type="Script" path="res://BackToMain.gd" id="14_37vql"]
 [ext_resource type="Script" path="res://scripts/records_management.gd" id="17_28gxp"]
+[ext_resource type="Script" path="res://scripts/records_refresh_button.gd" id="18_6rd35"]
+[ext_resource type="Script" path="res://records_file_button.gd" id="19_r2kmk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvyph"]
 
@@ -336,6 +338,20 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_p3mpu")
 text = "Deselect All"
 script = ExtResource("6_5hk60")
+
+[node name="RecordsButton" type="Button" parent="MainMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 505.5
+offset_top = -358.0
+offset_right = 657.5
+offset_bottom = -327.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Manage Records"
 
 [node name="Session" type="CanvasLayer" parent="."]
 layer = 0
@@ -1455,7 +1471,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_urj2i")
 text = "OK"
 
 [node name="Management" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("17_28gxp")
 
 [node name="BackGround" type="ColorRect" parent="Management"]
@@ -1468,14 +1483,14 @@ color = Color(0.54902, 0.180392, 0.329412, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="TextEdit" parent="Management"]
-anchors_preset = -1
-anchor_left = 0.486
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.486
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -285.222
+offset_left = -304.5
 offset_top = -368.0
-offset_right = 284.778
+offset_right = 265.5
 offset_bottom = -256.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1497,9 +1512,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -612.5
+offset_left = -633.5
 offset_top = -168.0
-offset_right = -179.5
+offset_right = -200.5
 offset_bottom = -120.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1510,12 +1525,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -162.5
+offset_left = -183.5
 offset_top = -168.0
-offset_right = 658.5
+offset_right = 637.5
 offset_bottom = 355.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+editable = false
+wrap_mode = 1
 
 [node name="Label" type="Label" parent="Management"]
 anchors_preset = 8
@@ -1523,9 +1541,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -613.5
+offset_left = -634.5
 offset_top = -213.0
-offset_right = -327.5
+offset_right = -348.5
 offset_bottom = -174.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1538,9 +1556,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -162.5
+offset_left = -183.5
 offset_top = -213.0
-offset_right = 123.5
+offset_right = 102.5
 offset_bottom = -174.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1553,15 +1571,61 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -609.5
+offset_left = -630.5
 offset_top = -101.0
-offset_right = -179.5
-offset_bottom = 356.0
+offset_right = -200.5
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
-text = "Put your record file in the \"Records\" directory and select it from the pop up menu."
+text = "Put your record file in the \"records\" directory and select it from the pop up menu to visualize the data."
+editable = false
 wrap_mode = 1
+
+[node name="Button" type="Button" parent="Management"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -630.5
+offset_top = 317.0
+offset_right = -200.5
+offset_bottom = 354.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Refresh Files"
+script = ExtResource("18_6rd35")
+
+[node name="LinkButton" type="LinkButton" parent="Management"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -624.5
+offset_top = 265.0
+offset_right = -481.5
+offset_bottom = 293.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Records Directory"
+script = ExtResource("19_r2kmk")
+
+[node name="MainMenuButton" type="Button" parent="Management"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 480.5
+offset_top = -350.0
+offset_right = 632.5
+offset_bottom = -319.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main Menu"
 
 [connection signal="pressed" from="MainMenu/Exit" to="MainMenu/Exit" method="_on_pressed"]
 [connection signal="pressed" from="Session/BackToMain" to="Session/BackToMain" method="_on_pressed"]
