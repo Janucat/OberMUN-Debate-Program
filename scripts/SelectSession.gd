@@ -13,7 +13,7 @@ func _process(delta):
 
 func list_contents():
 	for i in range(data.sessions):
-		add_item(str(i), i)
+		add_item(str(i + 1), i)
 
 func session_sel(index):
 	session = get_item_text(index)
