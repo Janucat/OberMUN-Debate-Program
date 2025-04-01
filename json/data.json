@@ -2,67 +2,76 @@
 	"sessions": 10,
 	"committees": [
 		{
-			"committee": "UNODC",
+			"committee": "DISC",
 			"topics": [
-				"Enforcing a National Prevention Strategy for children under the minimum age of criminal responsibility risking involvement in criminal activities.",
-				"Integrating different cultural, political and economic realities into society to avoid the onset of episodes of public disturbance in urban areas."
+				"Regulating the Creation and Expansion of Major Military Alliances, Focusing on the Nato-Ukraine Partnership.",
+				"Preventing Naval Assaults and Enforcing Maritime Boundaries in the Persian Gulf and in the Red Sea, Addressing the Critical Situation in Yemen."
 			],
-			"president": "Albino Tommaso",
-			"vice": "Piccini Martina",
-			"mod": ""
-		},
-		{
-			"committee": "UNEP",
-			"topics": [
-				"Prevention of natural disasters in order to minimize climate migration.",
-				"Developing innovative technologies to prevent marine pollution, promoting cooperation amongst nations in this field and consequent creation of new job opportunities."
-			],
-			"president": "Fumich Veronica",
-			"vice": "Korosec Luna",
-			"mod": ""
-		},
-		{
-			"committee": "ECOSOC",
-			"topics": [
-				"Stimulating international cooperation to prevent Brain Drain creating suitable job opportunities in the country of origin in order to preserve national identity.",
-				"Enhancing measures to prevent child slavery and forced labor in developing countries."
-			],
-			"president": "Gallushi Nensi",
-			"vice": "Cossina Luca",
-			"mod": ""
-		},
-		{
-			"committee": "FAO",
-			"topics": [
-				"Reducing Factory Farming, analyzing and keeping under control synthetic food production.",
-				"Ensure access to safe and nutritious food for civilians in conflict-affected areas."
-			],
-			"president": "Di Maio Maria Grazia",
-			"vice": "Ivancic Greta",
+			"president": "Laura Lucchetta",
+			"vice": "Luca Cossina, Tommaso Albino",
 			"mod": ""
 		},
 		{
 			"committee": "UNOOSA",
 			"topics": [
-				"Avoiding unethical space colonization and creating a regulation to reduce consequent space pollution.",
-				"Ensuring that International Space Programme remains unaffected by international tensions."
+				"Reviewing the Space Policy for Military Espionage and Private Satellites, in Order to Assure an Ethical Usage and to Guarantee the Right to Privacy",
+				"Exploring Strategies to Ensure Equitable Access to Lunar and Asteroid Resources Among Nations."
 			],
-			"president": "Alfieri Caterina",
-			"vice": "Devescovi Anja",
+			"president": "Anja Devescovi",
+			"vice": "Veronica Fumich",
 			"mod": ""
 		},
 		{
-			"committee": "DISEC",
+			"committee": "SPECPOL",
 			"topics": [
-				"Implementation of Ottawa Treaty on the prohibition of use, stockpiling, production and transfer of anti-personnel mines.",
-				"Implementation of measures to regulate the role of social media in fueling conflicts in order to prevent fake news propaganda."
+				"Debating the Effects of Foreign Military Bases on Host Nations and Their Sovereignty.",
+				"Addressing the Geopolitical Implications of the Militarization of the Arctic."
+				
 			],
-			"president": "Valentinis Alessandro",
-			"vice": "Coli Eleonora",
+			"president": "Lorenzo Marion",
+			"vice": "Luna Korosec",
+			"mod": ""
+		},
+		{
+			"committee": "UNODA",
+			"topics": [
+				"Addressing Lethal Autonomous Weapon Systems (LAWS).",
+				"Building Legal Frameworks for Regulating Civilian Possession of Arms for Self-Defense in order to Stop Illicit Trade and Promote Community Safety"
+				
+			],
+			"president": "Susanna Tedeschi",
+			"vice": "Emiliano di Domenico",
+			"mod": ""
+		},
+		{
+			"committee": "UNESCO",
+			"topics": [
+				"Establishing Laws to Preserve Cultural Heritage in Conflict Zones, Preventing its Annihilation.",
+				"Creating a Resilience Framework to Support Infrastructure Recovery in War-torn Countries and in Abandoned Sites."
+				
+			],
+			"president": "Alessia Loss",
+			"vice": "Laura Litcan",
+			"mod": ""
+		},
+		{
+			"committee": "UNEP",
+			"topics": [
+				"Land Degradation and Desertification: Restoring Fertile Land for Agriculture and Promoting Biotechnology in Sustainable Food Production.",
+				"The Impact of Climate Change on Marine Ecosystems: Strengthening Global Action to Protect Marine Life and Regulating Deep-sea Mining to Ensure Marine Conservation."
+				
+			],
+			"president": "Maria Grazia Di Maio",
+			"vice": "Sara Rinaldi",
 			"mod": ""
 		}
 	],
 	"nations": [
+		{
+			"id": "afghanistan",
+			"name": "Afghanistan",
+			"image": "AFG.png"
+		},
 		{
 			"id": "argentina",
 			"name": "Argentina",
@@ -72,6 +81,16 @@
 			"id": "australia",
 			"name": "Australia",
 			"image": "AUS.png"
+		},
+		{
+			"id": "austria",
+			"name": "Austria",
+			"image": "OST.png"
+		},
+		{
+			"id": "bangladesh",
+			"name": "Bangladesh",
+			"image": "BNG.png"
 		},
 		{
 			"id": "brazil",
@@ -104,9 +123,19 @@
 			"image": "COD.png"
 		},
 		{
+			"id": "denmark",
+			"name": "Denmark",
+			"image": "DNK.png"
+		},
+		{
 			"id": "egypt",
 			"name": "Egypt",
 			"image": "EGY.png"
+		},
+		{
+			"id": "finland",
+			"name": "Finland",
+			"image": "FNL.png"
 		},
 		{
 			"id": "france",
@@ -129,6 +158,11 @@
 			"image": "HUN.png"
 		},
 		{
+			"id": "iceland",
+			"name": "Iceland",
+			"image": "ICL.png"
+		},
+		{
 			"id": "india",
 			"name": "India",
 			"image": "IND.png"
@@ -137,6 +171,11 @@
 			"id": "indonesia",
 			"name": "Indonesia",
 			"image": "IDN.png"
+		},
+		{
+			"id": "iraq",
+			"name": "Iraq",
+			"image": "IRQ.png"
 		},
 		{
 			"id": "islamicrepublicofiran",
@@ -159,6 +198,11 @@
 			"image": "JPN.png"
 		},
 		{
+			"id": "lebanon",
+			"name": "Lebanon",
+			"image": "LBN.png"
+		},
+		{
 			"id": "libya",
 			"name": "Lybia",
 			"image": "LBY.png"
@@ -172,6 +216,11 @@
 			"id": "morocco",
 			"name": "Morocco",
 			"image": "MAR.png"
+		},
+		{
+			"id": "netherlands",
+			"name": "Netherlands",
+			"image": "NED.png"
 		},
 		{
 			"id": "newzealand",
@@ -199,6 +248,16 @@
 			"image": "CHN.png"
 		},
 		{
+			"id": "peru",
+			"name": "Peru",
+			"image": "PER.png"
+		},
+		{
+			"id": "poland",
+			"name": "Poland",
+			"image": "POL.png"
+		},
+		{
 			"id": "portugal",
 			"name": "Portugal",
 			"image": "PORT.png"
@@ -207,6 +266,11 @@
 			"id": "republicofkorea",
 			"name": "Republic of Korea",
 			"image": "KOR.png"
+		},
+		{
+			"id": "republicofcuba",
+			"name": "Republic of Cuba",
+			"image": "CUB.png"
 		},
 		{
 			"id": "romania",
@@ -222,6 +286,11 @@
 			"id": "saudiarabia",
 			"name": "Saudi Arabia",
 			"image": "SAU.png"
+		},
+		{
+			"id": "somalia",
+			"name": "Somalia",
+			"image": "SOM.png"
 		},
 		{
 			"id": "southafrica",
@@ -246,7 +315,7 @@
 		{
 			"id": "thailand",
 			"name": "Thailand",
-			"image": "KOR.png"
+			"image": "THA.png"
 		},
 		{
 			"id": "turkey",
@@ -267,6 +336,21 @@
 			"id": "unitedstatesofamerica",
 			"name": "United States of America",
 			"image": "USA.png"
+		},
+		{
+			"id": "ukraine",
+			"name": "Ukraine",
+			"image": "UKR.png"
+		},
+		{
+			"id": "vietnam",
+			"name": "Vietnam",
+			"image": "VTN.png"
+		},
+		{
+			"id": "yemen",
+			"name": "Yemen",
+			"image": "YEM.png"
 		}
 	]
 }
