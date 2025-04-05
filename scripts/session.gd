@@ -18,6 +18,11 @@ extends CanvasLayer
 @onready var del_list_o = $DelegatesList/GridContainer
 @onready var speak_list_o = $SpeakersList/GridContainer
 
+@onready var file_dialog: FileDialog = $FileDialog
+@onready var news_image: TextureRect = $NewsImage
+@onready var news_image_close_button: Button = $NewsImageCloseButton
+
+
 
 var delegate_obj = preload("res://delegate_list_object.tscn")
 
@@ -88,3 +93,19 @@ func refresh():
 		create_del(del_list[i], del_list_o)
 	for i in speak_list.size():
 		create_del(speak_list[i], speak_list_o)
+
+func _on_news_button_pressed() -> void:
+	file_dialog.show()
+
+func _on_file_dialog_file_selected(path: String) -> void:
+	var image = Image.load_from_file(path)
+	var texture = ImageTexture.create_from_image(image)
+	news_image.texture = texture
+	file_dialog.hide()
+	news_image.show()
+	news_image_close_button.show()
+
+
+func _on_news_image_close_button_pressed() -> void:
+	news_image.hide()
+	news_image_close_button.hide()
