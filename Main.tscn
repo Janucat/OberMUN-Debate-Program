@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bi0i1nagrn1hf"]
+[gd_scene load_steps=30 format=3 uid="uid://bi0i1nagrn1hf"]
 
 [ext_resource type="Script" path="res://scripts/data_setup.gd" id="1_87lbl"]
 [ext_resource type="Texture2D" uid="uid://uxwhq1lg1x6u" path="res://art/icons/Logo_small_transparent.png" id="2_nqn0e"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://VotingPage.gd" id="12_01ptb"]
 [ext_resource type="Script" path="res://VotingButton.gd" id="12_pvsap"]
 [ext_resource type="Script" path="res://BackToMain.gd" id="14_37vql"]
+[ext_resource type="Texture2D" uid="uid://cngfyjk5py05a" path="res://icon.svg" id="15_fh0ps"]
 [ext_resource type="Script" path="res://scripts/records_management.gd" id="17_28gxp"]
 [ext_resource type="Script" path="res://scripts/records_refresh_button.gd" id="18_6rd35"]
 [ext_resource type="Script" path="res://records_file_button.gd" id="19_r2kmk"]
@@ -41,6 +42,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("1_87lbl")
 
 [node name="BackGround" type="ColorRect" parent="MainMenu"]
@@ -859,6 +861,57 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
 text = "VOTING 1/3"
 script = ExtResource("12_pvsap")
 
+[node name="NewsButton" type="Button" parent="Session"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 103.5
+offset_top = 124.0
+offset_right = 278.5
+offset_bottom = 241.0
+theme_override_font_sizes/font_size = 21
+text = "SHOW
+EMERGENCY 
+NEWS"
+
+[node name="FileDialog" type="FileDialog" parent="Session"]
+title = "Open a File"
+position = Vector2i(170, 135)
+size = Vector2i(1000, 500)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+
+[node name="NewsImage" type="TextureRect" parent="Session"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -649.5
+offset_top = -365.0
+offset_right = -527.5
+offset_bottom = -243.0
+scale = Vector2(5, 2)
+texture = ExtResource("15_fh0ps")
+expand_mode = 1
+
+[node name="NewsImageCloseButton" type="Button" parent="Session"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = -364.0
+offset_right = -39.5
+offset_bottom = -333.0
+text = "x"
+
 [node name="VotingPage" type="CanvasLayer" parent="."]
 visible = false
 script = ExtResource("12_01ptb")
@@ -1629,6 +1682,9 @@ text = "Main Menu"
 [connection signal="pressed" from="Session/BackToMain" to="Session/BackToMain" method="_on_pressed"]
 [connection signal="pressed" from="Session/VotingButton" to="Session/VotingButton" method="_on_pressed"]
 [connection signal="pressed" from="Session/VotingButton" to="VotingPage" method="_on_voting_button_pressed"]
+[connection signal="pressed" from="Session/NewsButton" to="Session" method="_on_news_button_pressed"]
+[connection signal="file_selected" from="Session/FileDialog" to="Session" method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="Session/NewsImageCloseButton" to="Session" method="_on_news_image_close_button_pressed"]
 [connection signal="pressed" from="VotingPage/Voting stuff/Favor" to="VotingPage" method="_on_favor_pressed"]
 [connection signal="pressed" from="VotingPage/Voting stuff/Against" to="VotingPage" method="_on_against_pressed"]
 [connection signal="pressed" from="VotingPage/Voting stuff/Abstain" to="VotingPage" method="_on_abstain_pressed"]
