@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.54902, 0.180392, 0.329412, 1)
 boot_splash/image="res://art/icons/Logo_small_transparent.png"
 boot_splash/fullsize=false
-config/icon="res://icon.svg"
+config/icon="res://art/icon.ico"
 
 [display]
 
