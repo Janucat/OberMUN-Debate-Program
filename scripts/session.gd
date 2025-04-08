@@ -24,7 +24,7 @@ extends CanvasLayer
 
 
 
-var delegate_obj = preload("res://delegate_list_object.tscn")
+var delegate_obj = preload("res://scenes/delegate_list_object.tscn")
 
 var file_path = "res://art/Flags/%s"
 

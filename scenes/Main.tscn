@@ -1,25 +1,25 @@
-[gd_scene load_steps=30 format=3 uid="uid://bi0i1nagrn1hf"]
+[gd_scene load_steps=31 format=3 uid="uid://bi0i1nagrn1hf"]
 
-[ext_resource type="Script" path="res://scripts/data_setup.gd" id="1_87lbl"]
-[ext_resource type="Texture2D" uid="uid://uxwhq1lg1x6u" path="res://art/icons/Logo_small_transparent.png" id="2_nqn0e"]
-[ext_resource type="Script" path="res://scripts/GridContainer.gd" id="3_i8m8r"]
-[ext_resource type="Script" path="res://scripts/SelectCommittee.gd" id="3_myi24"]
-[ext_resource type="Script" path="res://scripts/SelectTopic.gd" id="4_s0o58"]
-[ext_resource type="Script" path="res://scripts/start_session.gd" id="4_stb0q"]
-[ext_resource type="Script" path="res://scripts/select_all_button.gd" id="4_t0tua"]
-[ext_resource type="Script" path="res://scripts/SelectSession.gd" id="5_lfhms"]
-[ext_resource type="Script" path="res://scripts/deselect_all_button.gd" id="6_5hk60"]
-[ext_resource type="Script" path="res://Exit.gd" id="9_jywtj"]
-[ext_resource type="Script" path="res://scripts/session.gd" id="10_pu1f3"]
-[ext_resource type="PackedScene" uid="uid://cha7cyhvt32do" path="res://Timer.tscn" id="11_0yosp"]
-[ext_resource type="Script" path="res://WarningPanel.gd" id="11_m7d3u"]
-[ext_resource type="Script" path="res://VotingPage.gd" id="12_01ptb"]
-[ext_resource type="Script" path="res://VotingButton.gd" id="12_pvsap"]
-[ext_resource type="Script" path="res://BackToMain.gd" id="14_37vql"]
-[ext_resource type="Texture2D" uid="uid://cngfyjk5py05a" path="res://icon.svg" id="15_fh0ps"]
-[ext_resource type="Script" path="res://scripts/records_management.gd" id="17_28gxp"]
-[ext_resource type="Script" path="res://scripts/records_refresh_button.gd" id="18_6rd35"]
-[ext_resource type="Script" path="res://records_file_button.gd" id="19_r2kmk"]
+[ext_resource type="Script" path="res://scripts/data_setup.gd" id="1_q31jd"]
+[ext_resource type="Texture2D" uid="uid://uxwhq1lg1x6u" path="res://art/icons/Logo_small_transparent.png" id="2_1sxu3"]
+[ext_resource type="Script" path="res://scripts/SelectCommittee.gd" id="3_yy1mv"]
+[ext_resource type="Script" path="res://scripts/SelectTopic.gd" id="4_dvxkw"]
+[ext_resource type="Script" path="res://scripts/SelectSession.gd" id="5_cgcdp"]
+[ext_resource type="Script" path="res://scripts/GridContainer.gd" id="6_4pfl5"]
+[ext_resource type="Script" path="res://scripts/select_all_button.gd" id="7_rguyv"]
+[ext_resource type="Script" path="res://scripts/start_session.gd" id="8_yrtdx"]
+[ext_resource type="Script" path="res://scripts/Exit.gd" id="9_buk3x"]
+[ext_resource type="Script" path="res://scripts/deselect_all_button.gd" id="10_38p27"]
+[ext_resource type="Script" path="res://scripts/session.gd" id="11_qm5oo"]
+[ext_resource type="Script" path="res://scripts/BackToMain.gd" id="12_1eu6o"]
+[ext_resource type="PackedScene" uid="uid://cha7cyhvt32do" path="res://scenes/Timer.tscn" id="13_b70mo"]
+[ext_resource type="Script" path="res://scripts/VotingButton.gd" id="14_1ceof"]
+[ext_resource type="Texture2D" uid="uid://cngfyjk5py05a" path="res://icon.svg" id="15_naj61"]
+[ext_resource type="Script" path="res://scripts/VotingPage.gd" id="16_reoqu"]
+[ext_resource type="Script" path="res://scripts/WarningPanel.gd" id="17_x6su8"]
+[ext_resource type="Script" path="res://scripts/records_management.gd" id="18_d8c6b"]
+[ext_resource type="Script" path="res://scripts/records_refresh_button.gd" id="19_wldeb"]
+[ext_resource type="Script" path="res://scripts/records_file_button.gd" id="20_ru2hl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvyph"]
 
@@ -39,10 +39,13 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_urj2i"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wit1r"]
+bg_color = Color(0.466815, 0.145969, 0.276202, 1)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
-script = ExtResource("1_87lbl")
+script = ExtResource("1_q31jd")
 
 [node name="BackGround" type="ColorRect" parent="MainMenu"]
 anchors_preset = 15
@@ -66,7 +69,7 @@ offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_nqn0e")
+texture = ExtResource("2_1sxu3")
 expand_mode = 2
 metadata/_edit_use_anchors_ = true
 
@@ -124,7 +127,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_tkvwg")
 selected = 0
 item_count = 1
 popup/item_0/text = "Select a committee"
-script = ExtResource("3_myi24")
+script = ExtResource("3_yy1mv")
 metadata/_edit_use_anchors_ = true
 
 [node name="SelectTopic" type="OptionButton" parent="MainMenu/SelectionButtons"]
@@ -143,7 +146,7 @@ text_overrun_behavior = 3
 selected = 0
 item_count = 1
 popup/item_0/text = "Select a topic"
-script = ExtResource("4_s0o58")
+script = ExtResource("4_dvxkw")
 
 [node name="SelectSession" type="OptionButton" parent="MainMenu/SelectionButtons"]
 layout_mode = 1
@@ -160,7 +163,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_tkvwg")
 selected = 0
 item_count = 1
 popup/item_0/text = "Select a session"
-script = ExtResource("5_lfhms")
+script = ExtResource("5_cgcdp")
 
 [node name="Texts" type="Control" parent="MainMenu"]
 layout_mode = 3
@@ -267,7 +270,7 @@ grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="MainMenu/UNEP Container"]
 layout_mode = 2
-script = ExtResource("3_i8m8r")
+script = ExtResource("6_4pfl5")
 
 [node name="Select All" type="Button" parent="MainMenu"]
 anchors_preset = 8
@@ -284,7 +287,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_p3mpu")
 text = "Select All"
-script = ExtResource("4_t0tua")
+script = ExtResource("7_rguyv")
 
 [node name="Start Session" type="Button" parent="MainMenu"]
 anchors_preset = 8
@@ -301,7 +304,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_p3mpu")
 text = "Start Session"
-script = ExtResource("4_stb0q")
+script = ExtResource("8_yrtdx")
 
 [node name="Exit" type="Button" parent="MainMenu"]
 anchors_preset = 8
@@ -318,7 +321,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_p3mpu")
 text = "Exit"
-script = ExtResource("9_jywtj")
+script = ExtResource("9_buk3x")
 
 [node name="Deselect All" type="Button" parent="MainMenu"]
 anchors_preset = 8
@@ -335,7 +338,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_p3mpu")
 text = "Deselect All"
-script = ExtResource("6_5hk60")
+script = ExtResource("10_38p27")
 
 [node name="RecordsButton" type="Button" parent="MainMenu"]
 anchors_preset = 8
@@ -351,9 +354,24 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Manage Records"
 
+[node name="ManageSessionButton" type="Button" parent="MainMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 506.5
+offset_top = -316.0
+offset_right = 658.5
+offset_bottom = -285.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Edit Session Data"
+
 [node name="Session" type="CanvasLayer" parent="."]
 layer = 0
-script = ExtResource("10_pu1f3")
+visible = false
+script = ExtResource("11_qm5oo")
 
 [node name="BackGround" type="ColorRect" parent="Session"]
 anchors_preset = 15
@@ -380,7 +398,7 @@ scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
 text = "BACK TO MAIN MENU"
-script = ExtResource("14_37vql")
+script = ExtResource("12_1eu6o")
 
 [node name="Icon" type="TextureRect" parent="Session"]
 anchors_preset = 8
@@ -395,7 +413,7 @@ offset_bottom = -49.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_nqn0e")
+texture = ExtResource("2_1sxu3")
 expand_mode = 2
 metadata/_edit_use_anchors_ = true
 
@@ -805,7 +823,7 @@ grow_vertical = 2
 [node name="GridContainer" type="GridContainer" parent="Session/SpeakersList"]
 layout_mode = 2
 
-[node name="Timer" parent="Session" instance=ExtResource("11_0yosp")]
+[node name="Timer" parent="Session" instance=ExtResource("13_b70mo")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -858,7 +876,7 @@ scale = Vector2(0.3, 0.3)
 theme_override_font_sizes/font_size = 120
 theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
 text = "VOTING 1/3"
-script = ExtResource("12_pvsap")
+script = ExtResource("14_1ceof")
 
 [node name="NewsButton" type="Button" parent="Session"]
 anchors_preset = 8
@@ -885,7 +903,7 @@ access = 2
 
 [node name="NewsImage" type="TextureRect" parent="Session"]
 visible = false
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -895,12 +913,12 @@ offset_top = -365.0
 offset_right = -527.5
 offset_bottom = -243.0
 scale = Vector2(5, 2)
-texture = ExtResource("15_fh0ps")
+texture = ExtResource("15_naj61")
 expand_mode = 1
 
 [node name="NewsImageCloseButton" type="Button" parent="Session"]
 visible = false
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -913,7 +931,7 @@ text = "x"
 
 [node name="VotingPage" type="CanvasLayer" parent="."]
 visible = false
-script = ExtResource("12_01ptb")
+script = ExtResource("16_reoqu")
 
 [node name="BackGround" type="ColorRect" parent="VotingPage"]
 anchors_preset = 15
@@ -1477,7 +1495,7 @@ scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
 text = "BACK TO MAIN MENU"
-script = ExtResource("14_37vql")
+script = ExtResource("12_1eu6o")
 
 [node name="Permanent" type="CanvasLayer" parent="."]
 layer = 5
@@ -1507,7 +1525,7 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
-script = ExtResource("11_m7d3u")
+script = ExtResource("17_x6su8")
 
 [node name="Button" type="Button" parent="Permanent/WarningPanel"]
 layout_mode = 0
@@ -1521,7 +1539,7 @@ text = "OK"
 
 [node name="Management" type="CanvasLayer" parent="."]
 visible = false
-script = ExtResource("17_28gxp")
+script = ExtResource("18_d8c6b")
 
 [node name="BackGround" type="ColorRect" parent="Management"]
 anchors_preset = 15
@@ -1646,7 +1664,7 @@ offset_bottom = 354.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Refresh Files"
-script = ExtResource("18_6rd35")
+script = ExtResource("19_wldeb")
 
 [node name="LinkButton" type="LinkButton" parent="Management"]
 anchors_preset = 8
@@ -1661,7 +1679,7 @@ offset_bottom = 293.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Records Directory"
-script = ExtResource("19_r2kmk")
+script = ExtResource("20_ru2hl")
 
 [node name="MainMenuButton" type="Button" parent="Management"]
 anchors_preset = 8
@@ -1676,6 +1694,164 @@ offset_bottom = -319.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Main Menu"
+
+[node name="Session Editor" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="BackGround" type="ColorRect" parent="Session Editor"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.54902, 0.180392, 0.329412, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="Session Editor"]
+anchors_preset = -1
+anchor_left = 0.501
+anchor_top = 0.5
+anchor_right = 0.501
+anchor_bottom = 0.5
+offset_left = -98.8771
+offset_top = -386.0
+offset_right = 100.123
+offset_bottom = -346.0
+theme_override_font_sizes/font_size = 29
+text = "Session Editor"
+
+[node name="SessionsLabel" type="Label" parent="Session Editor"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -601.5
+offset_top = -313.0
+offset_right = -526.5
+offset_bottom = -290.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sessions: "
+
+[node name="CommitteesLabel" type="Label" parent="Session Editor"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -601.5
+offset_top = -276.0
+offset_right = -507.5
+offset_bottom = -253.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Committees"
+
+[node name="NationsLabel" type="Label" parent="Session Editor"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 384.5
+offset_top = -276.0
+offset_right = 445.5
+offset_bottom = -253.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Nations"
+
+[node name="LineEdit" type="LineEdit" parent="Session Editor"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -519.5
+offset_top = -316.0
+offset_right = -279.5
+offset_bottom = -285.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "0"
+virtual_keyboard_type = 2
+
+[node name="CommitteeListScroll" type="ScrollContainer" parent="Session Editor"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -603.5
+offset_top = -245.0
+offset_right = 360.5
+offset_bottom = 303.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wit1r")
+
+[node name="CommitteeList" type="GridContainer" parent="Session Editor/CommitteeListScroll"]
+layout_mode = 2
+
+[node name="NationListScroll" type="ScrollContainer" parent="Session Editor"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 383.5
+offset_top = -245.0
+offset_right = 664.5
+offset_bottom = 303.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wit1r")
+
+[node name="NationList" type="GridContainer" parent="Session Editor/NationListScroll"]
+layout_mode = 2
+
+[node name="AddCommittee" type="Button" parent="Session Editor"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -602.5
+offset_top = 315.0
+offset_right = -326.5
+offset_bottom = 351.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Add Committee"
+
+[node name="AddNation" type="Button" parent="Session Editor"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 383.5
+offset_top = 314.0
+offset_right = 663.5
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Add Nation"
+
+[node name="BackButton" type="Button" parent="Session Editor"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 483.5
+offset_top = -366.0
+offset_right = 653.5
+offset_bottom = -335.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back to Main Menu"
 
 [connection signal="pressed" from="MainMenu/Exit" to="MainMenu/Exit" method="_on_pressed"]
 [connection signal="pressed" from="Session/BackToMain" to="Session/BackToMain" method="_on_pressed"]

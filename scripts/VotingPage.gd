@@ -37,7 +37,7 @@ extends CanvasLayer
 
 @onready var voting_button = $"../Session/VotingButton"
 
-var delegate_obj = preload("res://delegate_vote_simple_object.tscn")
+var delegate_obj = preload("res://scenes/delegate_vote_simple_object.tscn")
 
 var selected_del = []
 var favor_del = []

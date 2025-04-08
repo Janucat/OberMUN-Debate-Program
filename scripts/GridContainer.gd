@@ -4,7 +4,7 @@ extends GridContainer
 @onready var select_all_button = $"../../Select All"
 @onready var data = get_node("../..")
 
-var state_check_box = preload("res://state_check_box.tscn")
+var state_check_box = preload("res://scenes/state_check_box.tscn")
 
 var nations_selected = []
 

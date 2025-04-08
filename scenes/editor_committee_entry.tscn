@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://8vh0karmh7c6"]
+
+[node name="EditorCommitteeEntry" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 900.0
+offset_bottom = 248.0
+
+[node name="Name" type="TextEdit" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 36.0
+placeholder_text = "Name"
+
+[node name="President" type="TextEdit" parent="."]
+layout_mode = 0
+offset_top = 39.0
+offset_right = 200.0
+offset_bottom = 75.0
+placeholder_text = "President"
+
+[node name="Vice" type="TextEdit" parent="."]
+layout_mode = 0
+offset_top = 78.0
+offset_right = 200.0
+offset_bottom = 114.0
+placeholder_text = "Vice"
+
+[node name="Mod" type="TextEdit" parent="."]
+layout_mode = 0
+offset_top = 117.0
+offset_right = 200.0
+offset_bottom = 153.0
+placeholder_text = "Mod"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 158.0
+offset_right = 908.0
+offset_bottom = 243.0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+layout_mode = 2

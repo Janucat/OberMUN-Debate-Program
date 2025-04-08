@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cha7cyhvt32do"]
 
-[ext_resource type="Script" path="res://Timer.gd" id="1_7ry0a"]
+[ext_resource type="Script" path="res://scripts/Timer.gd" id="1_7ry0a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_168ke"]
 
