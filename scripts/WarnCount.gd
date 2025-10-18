@@ -13,5 +13,3 @@ func _process(delta):
 
 func set_warn(count):
 	warn_count.text = count
-
-

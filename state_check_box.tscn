@@ -2,24 +2,24 @@
 
 [ext_resource type="Script" path="res://scripts/state_check_box.gd" id="1_pc8qx"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_60evd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_om6oq"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1k4wa"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_myy6q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lops4"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_myy6q"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1k4wa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_om6oq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_60evd"]
 
 [node name="StateCheckBox" type="CheckBox"]
 custom_minimum_size = Vector2(300, 0)
 offset_right = 245.0
 offset_bottom = 32.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_60evd")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_om6oq")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_1k4wa")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lops4")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_myy6q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lops4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1k4wa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_om6oq")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_60evd")
 text_overrun_behavior = 3
 script = ExtResource("1_pc8qx")
