@@ -35,7 +35,7 @@ func _ready():
 	start_session.start_session.connect(start)
 	
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func start():

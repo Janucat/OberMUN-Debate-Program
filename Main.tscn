@@ -357,6 +357,7 @@ text = "Manage Records"
 
 [node name="Session" type="CanvasLayer" parent="."]
 layer = 0
+visible = false
 script = ExtResource("10_pu1f3")
 
 [node name="BackGround" type="ColorRect" parent="Session"]
@@ -917,7 +918,6 @@ offset_bottom = -333.0
 text = "x"
 
 [node name="VotingPage" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("12_01ptb")
 
 [node name="BackGround" type="ColorRect" parent="VotingPage"]
@@ -938,7 +938,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -557.5
 offset_top = -249.0
-offset_right = -233.5
+offset_right = -195.19226
 offset_bottom = 168.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -946,9 +946,9 @@ scale = Vector2(1.3, 1.3)
 
 [node name="GridContainer" type="GridContainer" parent="VotingPage/DelegatesList"]
 layout_mode = 2
+theme_override_constants/v_separation = 12
 
 [node name="Voting stuff" type="Control" parent="VotingPage"]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -969,7 +969,7 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -560.5
 offset_top = -229.0
-offset_right = -234.5
+offset_right = -194.34613
 offset_bottom = 190.0
 grow_horizontal = 2
 scale = Vector2(1.3, 1.3)
@@ -1002,52 +1002,18 @@ context_menu_enabled = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="Favor" type="Button" parent="VotingPage/Voting stuff"]
-layout_mode = 0
-offset_left = 86.5
-offset_top = -303.0
-offset_right = 1087.5
-offset_bottom = -76.0
-scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 120
-theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
-text = "FAVOR"
-
-[node name="Against" type="Button" parent="VotingPage/Voting stuff"]
-layout_mode = 0
-offset_left = 88.5
-offset_top = -168.0
-offset_right = 1089.5
-offset_bottom = 59.0
-scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 120
-theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
-text = "AGAINST"
-
-[node name="Abstain" type="Button" parent="VotingPage/Voting stuff"]
-layout_mode = 0
-offset_left = 90.5
-offset_top = -33.0
-offset_right = 1091.5
-offset_bottom = 194.0
-scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 120
-theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
-text = "ABSTAIN"
-
 [node name="BackToSession" type="Button" parent="VotingPage/Voting stuff"]
 layout_mode = 0
-offset_left = 236.5
-offset_top = 231.0
-offset_right = 634.5
-offset_bottom = 406.0
+offset_left = 460.5
+offset_top = 293.0
+offset_right = 858.5
+offset_bottom = 468.0
 scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = SubResource("StyleBoxEmpty_03vp1")
 text = "BACK"
 
 [node name="Result stuff" type="Control" parent="VotingPage"]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -1062,6 +1028,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="FavorList" type="ScrollContainer" parent="VotingPage/Result stuff"]
+visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 8
@@ -1081,6 +1048,7 @@ scale = Vector2(1.6, 1.6)
 layout_mode = 2
 
 [node name="AgainstList" type="ScrollContainer" parent="VotingPage/Result stuff"]
+visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 8
@@ -1100,6 +1068,7 @@ scale = Vector2(1.6, 1.6)
 layout_mode = 2
 
 [node name="AbstainList" type="ScrollContainer" parent="VotingPage/Result stuff"]
+visible = false
 z_index = 3
 layout_mode = 0
 offset_left = 307.5
@@ -1116,10 +1085,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -628.0
-offset_top = -317.5
-offset_right = -432.0
-offset_bottom = -280.5
+offset_left = 41.5
+offset_top = -209.0
+offset_right = 237.5
+offset_bottom = -172.0
 grow_horizontal = 2
 scale = Vector2(1.8, 1.8)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -1136,10 +1105,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -170.0
-offset_top = -317.5
-offset_right = 26.0001
-offset_bottom = -280.5
+offset_left = 42.5
+offset_top = -124.0
+offset_right = 238.50009
+offset_bottom = -87.0
 grow_horizontal = 2
 scale = Vector2(1.8, 1.8)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -1156,10 +1125,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 282.0
-offset_top = -317.5
-offset_right = 478.0
-offset_bottom = -280.5
+offset_left = 42.5
+offset_top = -38.0
+offset_right = 238.5
+offset_bottom = -1.0
 grow_horizontal = 2
 scale = Vector2(1.8, 1.8)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -1172,6 +1141,7 @@ selecting_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="BackToSession" type="Button" parent="VotingPage/Result stuff"]
+visible = false
 layout_mode = 0
 offset_left = -98.5
 offset_top = 271.0
@@ -1689,9 +1659,6 @@ text = "Main Menu"
 [connection signal="pressed" from="Session/NewsButton" to="Session" method="_on_news_button_pressed"]
 [connection signal="file_selected" from="Session/FileDialog" to="Session" method="_on_file_dialog_file_selected"]
 [connection signal="pressed" from="Session/NewsImageCloseButton" to="Session" method="_on_news_image_close_button_pressed"]
-[connection signal="pressed" from="VotingPage/Voting stuff/Favor" to="VotingPage" method="_on_favor_pressed"]
-[connection signal="pressed" from="VotingPage/Voting stuff/Against" to="VotingPage" method="_on_against_pressed"]
-[connection signal="pressed" from="VotingPage/Voting stuff/Abstain" to="VotingPage" method="_on_abstain_pressed"]
 [connection signal="pressed" from="VotingPage/Voting stuff/BackToSession" to="VotingPage" method="_on_back_to_session_pressed"]
 [connection signal="pressed" from="VotingPage/Result stuff/BackToSession" to="VotingPage" method="_on_back_to_session_pressed"]
 [connection signal="pressed" from="VotingPage/Final Results/BackToSession2" to="VotingPage" method="_on_back_to_session_pressed"]

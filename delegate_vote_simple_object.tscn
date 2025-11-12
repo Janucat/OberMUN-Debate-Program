@@ -1,8 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2i2d5ww873in"]
+[gd_scene load_steps=9 format=3 uid="uid://b2i2d5ww873in"]
 
-[ext_resource type="Script" path="res://delegate_vote_simple_object.gd" id="1_budsu"]
+[ext_resource type="Script" uid="uid://c2afrfusbt035" path="res://delegate_vote_simple_object.gd" id="1_budsu"]
+[ext_resource type="Texture2D" uid="uid://bwhmstbre638r" path="res://votebuttonstextures/abstainbutton.tres" id="2_ep6bw"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jwxi0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwgjd"]
+
+[sub_resource type="Gradient" id="Gradient_jwxi0"]
+colors = PackedColorArray(0, 0.80784315, 0, 1, 0, 0.80784315, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ep6bw"]
+gradient = SubResource("Gradient_jwxi0")
+
+[sub_resource type="Gradient" id="Gradient_jv3fn"]
+colors = PackedColorArray(0.80784315, 0, 0, 1, 0.80784315, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0tcd1"]
+gradient = SubResource("Gradient_jv3fn")
 
 [node name="delegate_vote_simple_object" type="Label"]
 custom_minimum_size = Vector2(170, 0)
@@ -21,13 +36,69 @@ offset_left = 173.0
 offset_top = -2.0
 offset_right = 217.0
 offset_bottom = 26.0
+texture = SubResource("PlaceholderTexture2D_jwxi0")
 expand_mode = 2
 
 [node name="CheckButton" type="CheckButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 226.0
 offset_right = 270.0
 offset_bottom = 24.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_uwgjd")
 
+[node name="Favor" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 58.0
+offset_top = -13.0
+offset_right = 98.0
+offset_bottom = 11.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = SubResource("GradientTexture2D_ep6bw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Against" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 101.0
+offset_top = -13.0
+offset_right = 141.0
+offset_bottom = 11.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = SubResource("GradientTexture2D_0tcd1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Abstain" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 144.0
+offset_top = -13.0
+offset_right = 184.0
+offset_bottom = 11.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("2_ep6bw")
+ignore_texture_size = true
+stretch_mode = 0
+
 [connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="Favor" to="." method="_on_favor_pressed"]
+[connection signal="pressed" from="Against" to="." method="_on_against_pressed"]
+[connection signal="pressed" from="Abstain" to="." method="_on_abstain_pressed"]
