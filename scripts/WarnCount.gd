@@ -11,5 +11,5 @@ func _ready():
 func _process(delta):
 	pass
 
-func set_warn(count):
-	warn_count.text = count
+#func set_warn(count):
+	#warn_count.text = count
