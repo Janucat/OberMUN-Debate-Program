@@ -357,7 +357,6 @@ text = "Manage Records"
 
 [node name="Session" type="CanvasLayer" parent="."]
 layer = 0
-visible = false
 script = ExtResource("10_pu1f3")
 
 [node name="BackGround" type="ColorRect" parent="Session"]
@@ -918,6 +917,7 @@ offset_bottom = -333.0
 text = "x"
 
 [node name="VotingPage" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("12_01ptb")
 
 [node name="BackGround" type="ColorRect" parent="VotingPage"]
