@@ -1,11 +1,9 @@
 extends TextEdit
 
 @onready var warn_b = $WarnButton
-@onready var right_b = $RightButton
-@onready var left_b = $LeftButton
+@onready var nation_button: Button = $NationButton
 
-signal right
-signal left
+signal shift
 signal warn
 
 
@@ -16,8 +14,7 @@ var warns = 0
 
 func _ready():
 	warn_b.pressed.connect(warnf)
-	right_b.pressed.connect(rightf)
-	left_b.pressed.connect(leftf)
+	nation_button.pressed.connect(shiftf)
 	
 func _process(delta):
 	pass
@@ -25,11 +22,9 @@ func _process(delta):
 func warnf():
 	warn.emit(id)
 
-func leftf():
-	left.emit(id)
+func shiftf():
+	shift.emit(id)
 
-func rightf():
-	right.emit(id)
 
 
 

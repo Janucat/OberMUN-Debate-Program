@@ -55,11 +55,10 @@ func create_del(id, list_o):
 	var del = delegate_obj.instantiate()
 	del.id = id
 	del.icon = main.nations_image.get(id)
-	del.get_child(5).text = main.nations_name.get(id)
-	del.get_child(4).text = str(main.nations_warn.get(id))
-	del.get_child(2).texture = load(file_path % main.nations_image.get(id))
-	del.left.connect(leftf)
-	del.right.connect(rightf)
+	del.find_child("Nation").text = main.nations_name.get(id)
+	del.find_child("WarnCount").text = str(main.nations_warn.get(id))
+	del.find_child("TextureRect").texture = load(file_path % main.nations_image.get(id))
+	del.shift.connect(shiftf)
 	del.warn.connect(warnf)
 	list_o.add_child(del)
 	
@@ -69,17 +68,17 @@ func warnf(id):
 	refresh()
 	
 
-func leftf(id):
+func shiftf(id):
 	if !del_list.has(id):
 		speak_list.erase(id)
 		del_list.append(id)
 		refresh()
-
-func rightf(id):
+		return
 	if !speak_list.has(id):
 		del_list.erase(id)
 		speak_list.append(id)
 		refresh()
+		return
 
 func refresh():
 	var imax = del_list_o.get_children().size()
