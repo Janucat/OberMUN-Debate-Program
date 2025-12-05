@@ -1,5 +1,6 @@
 [gd_scene load_steps=31 format=3 uid="uid://bi0i1nagrn1hf"]
 
+<<<<<<< Updated upstream:scenes/Main.tscn
 [ext_resource type="Script" path="res://scripts/data_setup.gd" id="1_q31jd"]
 [ext_resource type="Texture2D" uid="uid://uxwhq1lg1x6u" path="res://art/icons/Logo_small_transparent.png" id="2_1sxu3"]
 [ext_resource type="Script" path="res://scripts/SelectCommittee.gd" id="3_yy1mv"]
@@ -20,6 +21,28 @@
 [ext_resource type="Script" path="res://scripts/records_management.gd" id="18_d8c6b"]
 [ext_resource type="Script" path="res://scripts/records_refresh_button.gd" id="19_wldeb"]
 [ext_resource type="Script" path="res://scripts/records_file_button.gd" id="20_ru2hl"]
+=======
+[ext_resource type="Script" uid="uid://dti48fdg6kjn7" path="res://scripts/data_setup.gd" id="1_87lbl"]
+[ext_resource type="Texture2D" uid="uid://ckx4trvtg2t5t" path="res://art/icons/Logo_small_transparent.png" id="2_nqn0e"]
+[ext_resource type="Script" uid="uid://62n5v2okr4o4" path="res://scripts/GridContainer.gd" id="3_i8m8r"]
+[ext_resource type="Script" uid="uid://w71gcopfco6h" path="res://scripts/SelectCommittee.gd" id="3_myi24"]
+[ext_resource type="Script" uid="uid://d0p8frhtyia8f" path="res://scripts/SelectTopic.gd" id="4_s0o58"]
+[ext_resource type="Script" uid="uid://bvbgl7l3hbrd3" path="res://scripts/start_session.gd" id="4_stb0q"]
+[ext_resource type="Script" uid="uid://dk8i7ch2wbar2" path="res://scripts/select_all_button.gd" id="4_t0tua"]
+[ext_resource type="Script" uid="uid://b18qlw70xspab" path="res://scripts/SelectSession.gd" id="5_lfhms"]
+[ext_resource type="Script" uid="uid://cqf6ng86v8s34" path="res://scripts/deselect_all_button.gd" id="6_5hk60"]
+[ext_resource type="Script" uid="uid://pfgy8jyefa3x" path="res://Exit.gd" id="9_jywtj"]
+[ext_resource type="Script" uid="uid://btrokk3dht2ep" path="res://scripts/session.gd" id="10_pu1f3"]
+[ext_resource type="PackedScene" uid="uid://cha7cyhvt32do" path="res://Timer.tscn" id="11_0yosp"]
+[ext_resource type="Script" uid="uid://dr3gm3hi6ea" path="res://WarningPanel.gd" id="11_m7d3u"]
+[ext_resource type="Script" uid="uid://dubncba1f6wni" path="res://VotingPage.gd" id="12_01ptb"]
+[ext_resource type="Script" uid="uid://dr1qhtlslqvrb" path="res://VotingButton.gd" id="12_pvsap"]
+[ext_resource type="Script" uid="uid://xsjn2wnrukwi" path="res://BackToMain.gd" id="14_37vql"]
+[ext_resource type="Texture2D" uid="uid://cngfyjk5py05a" path="res://icon.svg" id="15_fh0ps"]
+[ext_resource type="Script" uid="uid://c5blvsa2ejbg" path="res://scripts/records_management.gd" id="17_28gxp"]
+[ext_resource type="Script" uid="uid://pwrsal4hrghd" path="res://scripts/records_refresh_button.gd" id="18_6rd35"]
+[ext_resource type="Script" uid="uid://d3en4ubqro6xn" path="res://records_file_button.gd" id="19_r2kmk"]
+>>>>>>> Stashed changes:Main.tscn
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvyph"]
 
@@ -45,7 +68,11 @@ bg_color = Color(0.466815, 0.145969, 0.276202, 1)
 [node name="Node2D" type="Node2D"]
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
+<<<<<<< Updated upstream:scenes/Main.tscn
 script = ExtResource("1_q31jd")
+=======
+script = ExtResource("1_87lbl")
+>>>>>>> Stashed changes:Main.tscn
 
 [node name="BackGround" type="ColorRect" parent="MainMenu"]
 anchors_preset = 15
@@ -91,7 +118,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxEmpty_dvyph")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qehjq")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_3ehh0")
-text = "OberMUN 2025 Debate Manager"
+text = "OberMUN 2026 Debate Manager"
 editable = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
@@ -113,9 +140,11 @@ grow_vertical = 2
 
 [node name="SelectCommittee" type="OptionButton" parent="MainMenu/SelectionButtons"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.9
 anchor_right = 0.5
+anchor_bottom = 0.9
 offset_left = -546.0
 offset_top = -32.0
 offset_right = -220.0
@@ -164,6 +193,14 @@ selected = 0
 item_count = 1
 popup/item_0/text = "Select a session"
 script = ExtResource("5_cgcdp")
+
+[node name="TextEdit" type="TextEdit" parent="MainMenu/SelectionButtons"]
+layout_mode = 0
+offset_left = -524.5
+offset_top = -32.0
+offset_right = -198.5
+offset_bottom = -1.0
+placeholder_text = "Committee name here"
 
 [node name="Texts" type="Control" parent="MainMenu"]
 layout_mode = 3
@@ -371,7 +408,11 @@ text = "Edit Session Data"
 [node name="Session" type="CanvasLayer" parent="."]
 layer = 0
 visible = false
+<<<<<<< Updated upstream:scenes/Main.tscn
 script = ExtResource("11_qm5oo")
+=======
+script = ExtResource("10_pu1f3")
+>>>>>>> Stashed changes:Main.tscn
 
 [node name="BackGround" type="ColorRect" parent="Session"]
 anchors_preset = 15
@@ -435,7 +476,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxEmpty_dvyph")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qehjq")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_3ehh0")
-text = "OberMUN 2025 Debate Manager"
+text = "OberMUN 2026 Debate Manager"
 editable = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false

@@ -14,6 +14,7 @@ func _process(delta):
 func list_contents():
 	for i in data.comm_id.size():
 		add_item(data.comm_id[i], i)
+	self.select(1)
 
 func comm_sel(index):
 	committee = get_item_text(index)
