@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+#es
+
 @onready var session = $"../Session"
 @onready var voting_page = $"../VotingPage"
 @onready var management = $"../Management"

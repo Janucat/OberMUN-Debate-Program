@@ -4,8 +4,8 @@
 		{
 			"committee": "DISC",
 			"topics": [
-				"Topic A",
-				"Topic B"
+				"Regulating the Creation and Expansion of Major Military Alliances, Focusing on the Nato-Ukraine Partnership.",
+				"Preventing Naval Assaults and Enforcing Maritime Boundaries in the Persian Gulf and in the Red Sea, Addressing the Critical Situation in Yemen."
 			],
 			"president": "Laura Lucchetta",
 			"vice": "Luca Cossina, Tommaso Albino",
@@ -14,8 +14,8 @@
 		{
 			"committee": "UNOOSA",
 			"topics": [
-				"Topic A",
-				"Topic B"
+				"Reviewing the Space Policy for Military Espionage and Private Satellites, in Order to Assure an Ethical Usage and to Guarantee the Right to Privacy",
+				"Exploring Strategies to Ensure Equitable Access to Lunar and Asteroid Resources Among Nations."
 			],
 			"president": "Anja Devescovi",
 			"vice": "Veronica Fumich",
@@ -24,8 +24,9 @@
 		{
 			"committee": "SPECPOL",
 			"topics": [
-				"Topic A",
-				"Topic B"
+				"Debating the Effects of Foreign Military Bases on Host Nations and Their Sovereignty.",
+				"Addressing the Geopolitical Implications of the Militarization of the Arctic."
+				
 			],
 			"president": "Lorenzo Marion",
 			"vice": "Luna Korosec",
@@ -34,8 +35,9 @@
 		{
 			"committee": "UNODA",
 			"topics": [
-				"Topic A",
-				"Topic B"
+				"Addressing Lethal Autonomous Weapon Systems (LAWS).",
+				"Building Legal Frameworks for Regulating Civilian Possession of Arms for Self-Defense in order to Stop Illicit Trade and Promote Community Safety"
+				
 			],
 			"president": "Susanna Tedeschi",
 			"vice": "Emiliano di Domenico",
@@ -44,8 +46,9 @@
 		{
 			"committee": "UNESCO",
 			"topics": [
-				"Topic A",
-				"Topic B"
+				"Establishing Laws to Preserve Cultural Heritage in Conflict Zones, Preventing its Annihilation.",
+				"Creating a Resilience Framework to Support Infrastructure Recovery in War-torn Countries and in Abandoned Sites."
+				
 			],
 			"president": "Alessia Loss",
 			"vice": "Laura Litcan",
@@ -54,8 +57,9 @@
 		{
 			"committee": "UNEP",
 			"topics": [
-				"Topic A",
-				"Topic B"
+				"Land Degradation and Desertification: Restoring Fertile Land for Agriculture and Promoting Biotechnology in Sustainable Food Production.",
+				"The Impact of Climate Change on Marine Ecosystems: Strengthening Global Action to Protect Marine Life and Regulating Deep-sea Mining to Ensure Marine Conservation."
+				
 			],
 			"president": "Maria Grazia Di Maio",
 			"vice": "Sara Rinaldi",
