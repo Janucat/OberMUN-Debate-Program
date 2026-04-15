@@ -15,7 +15,7 @@ run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0.54902, 0.180392, 0.329412, 1)
 boot_splash/fullsize=false
-boot_splash/image="res://art/icons/Logo_small_transparent.png"
+boot_splash/image="uid://hs7osy1ho30v"
 config/icon="res://art/icon.ico"
 
 [display]

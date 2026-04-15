@@ -2,67 +2,73 @@
 	"sessions": 10,
 	"committees": [
 		{
-			"committee": "DISC",
+			"committee": "IAEA",
 			"topics": [
-				"Regulating the Creation and Expansion of Major Military Alliances, Focusing on the Nato-Ukraine Partnership.",
-				"Preventing Naval Assaults and Enforcing Maritime Boundaries in the Persian Gulf and in the Red Sea, Addressing the Critical Situation in Yemen."
+				"Strengthening Regulatory Frameworks to Monitor the Civil Usage and Application of Nuclear Technologies.",
+				"Addressing Nuclear Threats in Order to Prevent the Smuggling of Nuclear Materials."
 			],
-			"president": "Laura Lucchetta",
-			"vice": "Luca Cossina, Tommaso Albino",
-			"mod": ""
-		},
-		{
-			"committee": "UNOOSA",
-			"topics": [
-				"Reviewing the Space Policy for Military Espionage and Private Satellites, in Order to Assure an Ethical Usage and to Guarantee the Right to Privacy",
-				"Exploring Strategies to Ensure Equitable Access to Lunar and Asteroid Resources Among Nations."
-			],
-			"president": "Anja Devescovi",
-			"vice": "Veronica Fumich",
-			"mod": ""
-		},
-		{
-			"committee": "SPECPOL",
-			"topics": [
-				"Debating the Effects of Foreign Military Bases on Host Nations and Their Sovereignty.",
-				"Addressing the Geopolitical Implications of the Militarization of the Arctic."
-				
-			],
-			"president": "Lorenzo Marion",
-			"vice": "Luna Korosec",
+			"president": "",
+			"vice": "",
 			"mod": ""
 		},
 		{
 			"committee": "UNODA",
 			"topics": [
-				"Addressing Lethal Autonomous Weapon Systems (LAWS).",
-				"Building Legal Frameworks for Regulating Civilian Possession of Arms for Self-Defense in order to Stop Illicit Trade and Promote Community Safety"
-				
+				"Regulating the Development, Testing and Usage of Military Applications of Artificial Intelligence and Ensuring that they Comply with International Humanitarian Law.",
+				"The Role of United Nations’ Mechanisms in Investigating Alleged Use of Chemical and Biological Weapons."
 			],
-			"president": "Susanna Tedeschi",
-			"vice": "Emiliano di Domenico",
+			"president": "",
+			"vice": "",
+			"mod": ""
+		},
+		{
+			"committee": "UNODC",
+			"topics": [
+				"Addressing and Strengthening International Cooperation to Dismantle Criminal Groups engaged in the Trafficking of Migrants.",
+				"Discussing Online Sexual Exploitation of Children and Women from Developing Countries and Enforcing Sanctions for the Exploiters."
+			],
+			"president": "",
+			"vice": "",
+			"mod": ""
+		},
+		{
+			"committee": "DISC",
+			"topics": [
+				"Revisiting and Negotiating the Terms of the New Start Protocol.",
+				"Addressing the Issue of the Rise of Private Military Companies and their Roles in Armed Conflicts."
+			],
+			"president": "",
+			"vice": "",
 			"mod": ""
 		},
 		{
 			"committee": "UNESCO",
 			"topics": [
-				"Establishing Laws to Preserve Cultural Heritage in Conflict Zones, Preventing its Annihilation.",
-				"Creating a Resilience Framework to Support Infrastructure Recovery in War-torn Countries and in Abandoned Sites."
-				
+				"Addressing the Challenge of Safeguarding Academic Freedom while Establishing Standards that Prevent the Spreading of Intentionally False or Distorted Historical Claims.",
+				"Debating and Regulating the Ethical Challenges of Introducing Emerging Technologies in the Field of Cultural Preservation."
 			],
-			"president": "Alessia Loss",
-			"vice": "Laura Litcan",
+			"president": "",
+			"vice": "",
 			"mod": ""
 		},
 		{
-			"committee": "UNEP",
+			"committee": "UNWOMEN",
 			"topics": [
-				"Land Degradation and Desertification: Restoring Fertile Land for Agriculture and Promoting Biotechnology in Sustainable Food Production.",
-				"The Impact of Climate Change on Marine Ecosystems: Strengthening Global Action to Protect Marine Life and Regulating Deep-sea Mining to Ensure Marine Conservation."
-				
+				"Discussing the Legal Protection and Regulation of Women and Girls in Contexts of Conflicts, in Particular Women Combatants.",
+				"Debates and Regulatory Approaches Concerning the Manosphere Ecosystem and Incel Groups."
 			],
-			"president": "Maria Grazia Di Maio",
-			"vice": "Sara Rinaldi",
+			"president": "",
+			"vice": "",
+			"mod": ""
+		},
+		{
+			"committee": "UNSC",
+			"topics": [
+				"The 1962 Cuban Missile Crisis.",
+				"The Creation of the State of Israel and the Palestinian Question (1947-48)."
+			],
+			"president": "",
+			"vice": "",
 			"mod": ""
 		}
 	],

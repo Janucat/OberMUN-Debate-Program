@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=3 uid="uid://bi0i1nagrn1hf"]
 
 [ext_resource type="Script" uid="uid://dti48fdg6kjn7" path="res://scripts/data_setup.gd" id="1_87lbl"]
-[ext_resource type="Texture2D" uid="uid://uxwhq1lg1x6u" path="res://art/icons/Logo_small_transparent.png" id="2_nqn0e"]
+[ext_resource type="Texture2D" uid="uid://hs7osy1ho30v" path="res://art/icons/LogoSmol2026.png" id="2_nqn0e"]
 [ext_resource type="Script" uid="uid://62n5v2okr4o4" path="res://scripts/GridContainer.gd" id="3_i8m8r"]
 [ext_resource type="Script" uid="uid://w71gcopfco6h" path="res://scripts/SelectCommittee.gd" id="3_myi24"]
 [ext_resource type="Script" uid="uid://d0p8frhtyia8f" path="res://scripts/SelectTopic.gd" id="4_s0o58"]
@@ -42,6 +42,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("1_87lbl")
 
 [node name="BackGround" type="ColorRect" parent="MainMenu"]
@@ -54,6 +55,7 @@ color = Color(0.54902, 0.180392, 0.329412, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Icon" type="TextureRect" parent="MainMenu"]
+texture_filter = 2
 anchors_preset = -1
 anchor_left = 0.507
 anchor_top = 0.5
@@ -88,7 +90,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxEmpty_dvyph")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qehjq")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_3ehh0")
-text = "OberMUN 2025 Debate Manager"
+text = "OberMUN 2026 Debate Manager"
 editable = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
@@ -420,7 +422,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxEmpty_dvyph")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qehjq")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_3ehh0")
-text = "OberMUN 2025 Debate Manager"
+text = "OberMUN 2026 Debate Manager"
 editable = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
@@ -633,7 +635,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 0
 placeholder_text = "N/A"
-editable = false
 context_menu_enabled = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
@@ -652,7 +653,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 0
 placeholder_text = "N/A"
-editable = false
 context_menu_enabled = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
@@ -671,7 +671,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 0
 placeholder_text = "N/A"
-editable = false
 context_menu_enabled = false
 selecting_enabled = false
 drag_and_drop_selection_enabled = false
@@ -916,7 +915,6 @@ offset_bottom = -333.0
 text = "x"
 
 [node name="VotingPage" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("12_01ptb")
 
 [node name="BackGround" type="ColorRect" parent="VotingPage"]

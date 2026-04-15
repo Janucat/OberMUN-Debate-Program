@@ -57,25 +57,28 @@ var makerecord_state = false
 signal makerecord
 
 func _ready():
-	numberOfVotation = 0
+	numberOfVotation = 0 #tenere il conto delle 3 votazioni
 	delegates_list.show()
 	voting_stuff.show()
 	#result_stuff.hide()
 	final_results.hide()
 
-func create_del(id, list_o, isCheck):
-	var del = delegate_obj.instantiate()
-	del.checked.connect(del_checked)
-	del.id = id
+func create_del(id, list_o, isCheck): #id è il nome della nazione, list_o è il nodo della lista, isCheck è di default true
+	var del = delegate_obj.instantiate() #istanzia dalla sottoscena 
+	
+	del.checked.connect(del_checked) #???
+	del.id = id 
 	del.icon = main.nations_image.get(id)
 	del.text = main.nations_name.get(id)
 	var icon_path = load("res://art/Flags/%s" % main.nations_image.get(id))
 	del.get_child(0).texture = icon_path
-	list_o.add_child(del)
-	if !isCheck:
+	
+	list_o.add_child(del) #aggiunge l'istanza alla lista
+	
+	if !isCheck: #???
 		del.check_button.hide()
 
-func del_checked(del, value):
+func del_checked(del, value): #obsoleta
 	if value == 1:
 		selected_del.append(del)
 		favor_del.append(del)
@@ -85,25 +88,25 @@ func del_checked(del, value):
 	elif value == 3:
 		selected_del.append(del)
 		abstain_del.append_array(selected_del)
-	already_voted = already_voted + 1
+	already_voted += 1
 	clean_children_and_lists()
 	sendresults()
 
 
-func _on_voting_button_pressed():
-	if numberOfVotation == 3:
+func _on_voting_button_pressed(): #nella sessione viene premuto "voting"
+	if numberOfVotation == 3: 
 		voting_stuff.hide()
 		final_results.show()
 		sendresults()
 	else:
-		against_title.text = "Against: "
+		against_title.text = "Against: " #setup del testo nei final results
 		abstain_title.text = "Abstain: "
 		favor_title.text = "Favor: "
 		already_voted = 0
 		result_stuff.show()
-		for i in sel_nations.nations_selected.size():
-			create_del(sel_nations.nations_selected[i], del_list_o, true)
-		total_del = del_list_o.get_child_count()
+		for i in sel_nations.nations_selected.size(): #lista dei delegati selezionati nel menu iniziale
+			create_del(sel_nations.nations_selected[i], del_list_o, true) #crea un elemento delegato nella colonna
+		total_del = del_list_o.get_child_count() #numero dei delegati totali
 
 
 func clean_children_and_lists():
