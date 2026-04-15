@@ -90,7 +90,6 @@ func del_checked(del, value): #obsoleta
 		abstain_del.append_array(selected_del)
 	already_voted += 1
 	clean_children_and_lists()
-	sendresults()
 
 
 func _on_voting_button_pressed(): #nella sessione viene premuto "voting"
