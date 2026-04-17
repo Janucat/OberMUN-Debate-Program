@@ -79,6 +79,11 @@
 			"image": "AFG.png"
 		},
 		{
+			"id": "albania",
+			"name": "Albania",
+			"image": "ALB.png"
+		},
+		{
 			"id": "argentina",
 			"name": "Argentina",
 			"image": "ARG.png"
@@ -97,6 +102,16 @@
 			"id": "bangladesh",
 			"name": "Bangladesh",
 			"image": "BNG.png"
+		},
+		{
+			"id": "belgium",
+			"name": "Belgium",
+			"image": "BLG.png"
+		},
+		{
+			"id": "bosnia",
+			"name": "Bosnia and Herzegovina",
+			"image": "BIH.png"
 		},
 		{
 			"id": "brazil",
@@ -119,6 +134,11 @@
 			"image": "COL.png"
 		},
 		{
+			"id": "croatia",
+			"name": "Croatia",
+			"image": "HRV.png"
+		},
+		{
 			"id": "democraticrepublicofkorea",
 			"name": "Democratic People’s Republic of Korea",
 			"image": "PRK.png"
@@ -139,6 +159,11 @@
 			"image": "EGY.png"
 		},
 		{
+			"id": "federalrepublicofgermany",
+			"name": "Federal Republic of Germany",
+			"image": "DEU.png"
+		},
+		{
 			"id": "finland",
 			"name": "Finland",
 			"image": "FNL.png"
@@ -154,9 +179,19 @@
 			"image": "DEU.png"
 		},
 		{
+			"id": "germandemocraticrepublic",
+			"name": "German Democratic Republic",
+			"image": "DDR.png"
+		},
+		{
 			"id": "ghana",
 			"name": "Ghana",
 			"image": "GHA.png"
+		},
+		{
+			"id": "greece",
+			"name": "Greece",
+			"image": "GRC.png"
 		},
 		{
 			"id": "hungary",
@@ -202,6 +237,16 @@
 			"id": "japan",
 			"name": "Japan",
 			"image": "JPN.png"
+		},
+		{
+			"id": "jordan",
+			"name": "Jordan",
+			"image": "JRD.png"
+		},
+		{
+			"id": "kyrgyzistan",
+			"name": "Kyrgyzistan",
+			"image": "KGZ.png"
 		},
 		{
 			"id": "lebanon",
@@ -257,6 +302,11 @@
 			"id": "peru",
 			"name": "Peru",
 			"image": "PER.png"
+		},
+		{
+			"id": "philippines",
+			"name": "Philippines",
+			"image": "PHL.png"
 		},
 		{
 			"id": "poland",
@@ -344,6 +394,11 @@
 			"image": "USA.png"
 		},
 		{
+			"id": "ussr",
+			"name": "Union of Soviet Socialist Republics",
+			"image": "SOV.png"
+		},
+		{
 			"id": "ukraine",
 			"name": "Ukraine",
 			"image": "UKR.png"
@@ -357,6 +412,11 @@
 			"id": "yemen",
 			"name": "Yemen",
 			"image": "YEM.png"
+		},
+		{
+			"id": "yugoslavia",
+			"name": "Federal Socialist Republic of Yugoslavia",
+			"image": "YGS.png"
 		}
 	]
 }
