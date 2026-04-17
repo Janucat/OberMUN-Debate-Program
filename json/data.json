@@ -104,6 +104,11 @@
 			"image": "BNG.png"
 		},
 		{
+			"id": "belgium",
+			"name": "Belgium",
+			"image": "BLG.png"
+		},
+		{
 			"id": "bosnia",
 			"name": "Bosnia and Herzegovina",
 			"image": "BIH.png"
@@ -154,6 +159,11 @@
 			"image": "EGY.png"
 		},
 		{
+			"id": "federalrepublicofgermany",
+			"name": "Federal Republic of Germany",
+			"image": "DEU.png"
+		},
+		{
 			"id": "finland",
 			"name": "Finland",
 			"image": "FNL.png"
@@ -167,6 +177,11 @@
 			"id": "germany",
 			"name": "Germany",
 			"image": "DEU.png"
+		},
+		{
+			"id": "germandemocraticrepublic",
+			"name": "German Democratic Republic",
+			"image": "DDR.png"
 		},
 		{
 			"id": "ghana",
@@ -222,6 +237,11 @@
 			"id": "japan",
 			"name": "Japan",
 			"image": "JPN.png"
+		},
+		{
+			"id": "jordan",
+			"name": "Jordan",
+			"image": "JRD.png"
 		},
 		{
 			"id": "kyrgyzistan",
@@ -374,6 +394,11 @@
 			"image": "USA.png"
 		},
 		{
+			"id": "ussr",
+			"name": "Union of Soviet Socialist Republics",
+			"image": "SOV.png"
+		},
+		{
 			"id": "ukraine",
 			"name": "Ukraine",
 			"image": "UKR.png"
@@ -387,6 +412,11 @@
 			"id": "yemen",
 			"name": "Yemen",
 			"image": "YEM.png"
+		},
+		{
+			"id": "yugoslavia",
+			"name": "Federal Socialist Republic of Yugoslavia",
+			"image": "YGS.png"
 		}
 	]
 }
