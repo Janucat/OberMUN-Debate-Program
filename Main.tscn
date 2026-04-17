@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bi0i1nagrn1hf"]
+[gd_scene load_steps=31 format=3 uid="uid://bi0i1nagrn1hf"]
 
 [ext_resource type="Script" uid="uid://dti48fdg6kjn7" path="res://scripts/data_setup.gd" id="1_87lbl"]
 [ext_resource type="Texture2D" uid="uid://hs7osy1ho30v" path="res://art/icons/LogoSmol2026.png" id="2_nqn0e"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://c5blvsa2ejbg" path="res://scripts/records_management.gd" id="17_28gxp"]
 [ext_resource type="Script" uid="uid://pwrsal4hrghd" path="res://scripts/records_refresh_button.gd" id="18_6rd35"]
 [ext_resource type="Script" uid="uid://d3en4ubqro6xn" path="res://records_file_button.gd" id="19_r2kmk"]
+[ext_resource type="Script" uid="uid://dp4ue1gopeo3b" path="res://editor.gd" id="21_devvj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvyph"]
 
@@ -1652,6 +1653,7 @@ grow_vertical = 2
 text = "Main Menu"
 
 [node name="Editor" type="CanvasLayer" parent="."]
+script = ExtResource("21_devvj")
 
 [node name="BackGround" type="ColorRect" parent="Editor"]
 anchors_preset = 15
@@ -1729,9 +1731,11 @@ theme = SubResource("Theme_cdk4x")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_tkvwg")
 selected = 0
-item_count = 1
-popup/item_0/text = "Select a committee"
+item_count = 2
+popup/item_0/text = "Nations"
 popup/item_0/id = 0
+popup/item_1/text = "Committee"
+popup/item_1/id = 1
 script = ExtResource("3_myi24")
 metadata/_edit_use_anchors_ = true
 
