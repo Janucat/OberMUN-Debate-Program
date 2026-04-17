@@ -89,6 +89,11 @@
 			"image": "ARG.png"
 		},
 		{
+			"id": "armenia",
+			"name": "Armenia",
+			"image": "ARM.png"
+		},
+		{
 			"id": "australia",
 			"name": "Australia",
 			"image": "AUS.png"
@@ -124,6 +129,11 @@
 			"image": "CAN.png"
 		},
 		{
+			"id": "cambodia",
+			"name": "Cambodia",
+			"image": "CMB.png"
+		},
+		{
 			"id": "centralafricanrepublic",
 			"name": "Central African Republic",
 			"image": "CAR.png"
@@ -132,6 +142,11 @@
 			"id": "colombia",
 			"name": "Colombia",
 			"image": "COL.png"
+		},
+		{
+			"id": "costarica",
+			"name": "Costa Rica",
+			"image": "COS.png"
 		},
 		{
 			"id": "croatia",
@@ -159,6 +174,11 @@
 			"image": "EGY.png"
 		},
 		{
+			"id": "ethiopia",
+			"name": "Ethiopia",
+			"image": "ETP.png"
+		},
+		{
 			"id": "federalrepublicofgermany",
 			"name": "Federal Republic of Germany",
 			"image": "DEU.png"
@@ -174,14 +194,14 @@
 			"image": "FRA.png"
 		},
 		{
-			"id": "germany",
-			"name": "Germany",
-			"image": "DEU.png"
-		},
-		{
 			"id": "germandemocraticrepublic",
 			"name": "German Democratic Republic",
 			"image": "DDR.png"
+		},
+		{
+			"id": "germany",
+			"name": "Germany",
+			"image": "DEU.png"
 		},
 		{
 			"id": "ghana",
@@ -255,7 +275,7 @@
 		},
 		{
 			"id": "libya",
-			"name": "Lybia",
+			"name": "Libya",
 			"image": "LBY.png"
 		},
 		{
@@ -270,7 +290,7 @@
 		},
 		{
 			"id": "netherlands",
-			"name": "Netherlands",
+			"name": "Kingdom of the Netherlands",
 			"image": "NED.png"
 		},
 		{
@@ -324,6 +344,11 @@
 			"image": "KOR.png"
 		},
 		{
+			"id": "republicofchina",
+			"name": "Republic of China",
+			"image": "ROC.png"
+		},
+		{
 			"id": "republicofcuba",
 			"name": "Republic of Cuba",
 			"image": "CUB.png"
@@ -364,6 +389,11 @@
 			"image": "SWE.png"
 		},
 		{
+			"id": "switzerland",
+			"name": "Switzerland",
+			"image": "SWT.png"
+		},
+		{
 			"id": "syrianarabrepublic",
 			"name": "Syrian Arab Republic",
 			"image": "SYR.png"
@@ -375,7 +405,7 @@
 		},
 		{
 			"id": "turkey",
-			"name": "Turney",
+			"name": "Turkey",
 			"image": "TUR.png"
 		},
 		{
