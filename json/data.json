@@ -79,6 +79,11 @@
 			"image": "AFG.png"
 		},
 		{
+			"id": "albania",
+			"name": "Albania",
+			"image": "ALB.png"
+		},
+		{
 			"id": "argentina",
 			"name": "Argentina",
 			"image": "ARG.png"
@@ -99,6 +104,11 @@
 			"image": "BNG.png"
 		},
 		{
+			"id": "bosnia",
+			"name": "Bosnia and Herzegovina",
+			"image": "BIH.png"
+		},
+		{
 			"id": "brazil",
 			"name": "Brazil",
 			"image": "BRA.png"
@@ -117,6 +127,11 @@
 			"id": "colombia",
 			"name": "Colombia",
 			"image": "COL.png"
+		},
+		{
+			"id": "croatia",
+			"name": "Croatia",
+			"image": "HRV.png"
 		},
 		{
 			"id": "democraticrepublicofkorea",
@@ -157,6 +172,11 @@
 			"id": "ghana",
 			"name": "Ghana",
 			"image": "GHA.png"
+		},
+		{
+			"id": "greece",
+			"name": "Greece",
+			"image": "GRC.png"
 		},
 		{
 			"id": "hungary",
@@ -202,6 +222,11 @@
 			"id": "japan",
 			"name": "Japan",
 			"image": "JPN.png"
+		},
+		{
+			"id": "Kyrgyzistan",
+			"name": "kyrgyzistan",
+			"image": "KGZ.png"
 		},
 		{
 			"id": "lebanon",
@@ -257,6 +282,11 @@
 			"id": "peru",
 			"name": "Peru",
 			"image": "PER.png"
+		},
+		{
+			"id": "philippines",
+			"name": "Philippines",
+			"image": "PHL.png"
 		},
 		{
 			"id": "poland",
