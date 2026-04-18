@@ -62,35 +62,7 @@ func _ready():
 	voting_stuff.show()
 	#result_stuff.hide()
 	final_results.hide()
-
-func create_del(id, list_o, isCheck): #id è il nome della nazione, list_o è il nodo della lista, isCheck è di default true
-	var del = delegate_obj.instantiate() #istanzia dalla sottoscena 
 	
-	del.checked.connect(del_checked) #???
-	del.id = id 
-	del.icon = main.nations_image.get(id)
-	del.text = main.nations_name.get(id)
-	var icon_path = load("res://art/Flags/%s" % main.nations_image.get(id))
-	del.get_child(0).texture = icon_path
-	
-	list_o.add_child(del) #aggiunge l'istanza alla lista
-	
-	if !isCheck: #???
-		del.check_button.hide()
-
-func del_checked(del, value): #obsoleta
-	if value == 1:
-		selected_del.append(del)
-		favor_del.append(del)
-	elif value == 2:
-		selected_del.append(del)
-		against_del.append(del)
-	elif value == 3:
-		selected_del.append(del)
-		abstain_del.append_array(selected_del)
-	already_voted += 1
-	clean_children_and_lists()
-
 
 func _on_voting_button_pressed(): #nella sessione viene premuto "voting"
 	if numberOfVotation == 3: 
@@ -106,6 +78,35 @@ func _on_voting_button_pressed(): #nella sessione viene premuto "voting"
 		for i in sel_nations.nations_selected.size(): #lista dei delegati selezionati nel menu iniziale
 			create_del(sel_nations.nations_selected[i], del_list_o, true) #crea un elemento delegato nella colonna
 		total_del = del_list_o.get_child_count() #numero dei delegati totali
+		
+
+func create_del(id, list_o, isCheck): #id è il nome della nazione, list_o è il nodo della lista, isCheck è di default true
+	var del = delegate_obj.instantiate() #istanzia dalla sottoscena 
+	
+	del.checked.connect(del_checked) 
+	del.id = id 
+	del.icon = main.nations_image.get(id)
+	del.text = main.nations_name.get(id)
+	var icon_path = load("res://art/Flags/%s" % main.nations_image.get(id))
+	del.get_child(0).texture = icon_path
+	
+	list_o.add_child(del) #aggiunge l'istanza alla lista
+	
+	if !isCheck: #???
+		del.check_button.hide()
+
+func del_checked(del, value): 
+	if value == 1:
+		selected_del.append(del)
+		favor_del.append(del)
+	elif value == 2:
+		selected_del.append(del)
+		against_del.append(del)
+	elif value == 3:
+		selected_del.append(del)
+		abstain_del.append(del) #abstain_del.append_array(selected_del)
+	already_voted += 1
+	clean_children_and_lists()
 
 
 func clean_children_and_lists():
@@ -118,9 +119,8 @@ func clean_children_and_lists():
 		if del_list_o.get_children().find(current_object) != -1:
 			del_list_o.remove_child(current_object)
 	selected_del.clear()
-	if del_list_o.get_children().is_empty():
-		if numberOfVotation != 3:
-			numberOfVotation += 1
+	
+	
 #		delegates_list.hide()
 	#voting_stuff.hide()
 	#result_stuff.show()
@@ -132,27 +132,30 @@ func clean_children_and_lists():
 	for i in abstain_del.size():
 		create_del(abstain_del[i].id, abstain_list, false)
 
+	favor_title.text = "Favor: " + str((favor_del.size()*100) / already_voted) + " % (" + str(favor_del.size()) + ")"
 	against_title.text = "Against: " + str((against_del.size()*100) / already_voted) + " % (" + str(against_del.size()) + ")"
 	abstain_title.text = "Abstain: " + str((abstain_del.size()*100) / already_voted) + " % (" + str(abstain_del.size()) + ")"
-	favor_title.text = "Favor: " + str((favor_del.size()*100) / already_voted) + " % (" + str(favor_del.size()) + ")"
-	
-	addtoresults()
-	
-	if numberOfVotation == 1:
+		
+	if numberOfVotation == 0:
 		against_title1.text = against_title.text
 		abstain_title1.text = abstain_title.text
 		favor_title1.text = favor_title.text
 		voting_button.text = "Voting 2/3"
-	if numberOfVotation == 2:
+	if numberOfVotation == 1:
 		against_title2.text = against_title.text
 		abstain_title2.text = abstain_title.text
 		favor_title2.text = favor_title.text
 		voting_button.text = "Voting 3/3"
-	if numberOfVotation == 3:
+	if numberOfVotation == 2:
 		against_title3.text = against_title.text
 		abstain_title3.text = abstain_title.text
 		favor_title3.text = favor_title.text
 		voting_button.text = "Results"
+	
+	if del_list_o.get_children().is_empty():
+		addtoresults()
+		if numberOfVotation != 3:
+			numberOfVotation += 1
 
 func _on_back_to_session_pressed():
 	selected_del.clear()
@@ -173,9 +176,18 @@ func remove_children(object):
 		object.remove_child(object.get_children()[0])
 
 func addtoresults():
-	results[numberOfVotation - 1].append(against_title.text)
-	results[numberOfVotation - 1].append(abstain_title.text)
-	results[numberOfVotation - 1].append(favor_title.text)
+	results[numberOfVotation].append(favor_title.text)
+	results[numberOfVotation].append(against_title.text)
+	results[numberOfVotation].append(abstain_title.text)
+	
+	#debug
+	#print("results = [")
+	#for i in results.size():
+		#print("i=" + str(i))
+		#for j in results[i].size():
+			#print("j=" + str(j) + ": " + results[i][j])
+		#print(",")
+	#print("]")
 
 func sendresults():
 	if !makerecord_state:
